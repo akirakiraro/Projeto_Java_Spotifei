@@ -8,6 +8,6 @@ package controller;
  *
  * @author Akira
  */
-public class Controller {
+public class UsuarioController {
     
 }
