@@ -4,19 +4,62 @@
  */
 package view;
 
+import java.awt.CardLayout;
+import javax.swing.*;
+
 /**
  *
  * @author Akira
  */
-public class Cadastro extends javax.swing.JFrame {
+public class TelaPrincipal extends javax.swing.JFrame {
+    
+    private CardLayout layout;
+    private JPanel painelPrincipal;
 
-    /**
-     * Creates new form Cadastro
-     */
-    public Cadastro() {
-        initComponents();
+    private TelaHome telaHome;
+    private TelaLogin telaLogin;
+    private TelaCadastro telaCadastro;
+    
+    public TelaPrincipal() {
+//        initComponents();
+        
+        
+        layout = new CardLayout();
+        painelPrincipal = new JPanel(layout);
+
+        telaHome = new TelaHome();
+        telaLogin = new TelaLogin();
+        telaCadastro = new TelaCadastro();
+
+        painelPrincipal.add(telaHome, "home");
+        painelPrincipal.add(telaLogin, "login");
+        painelPrincipal.add(telaCadastro, "cadastro");
+        
+        add(painelPrincipal);
+        mostrarTela("home");
+        setTitle("Spotifei");
+        setSize(1024, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
+    public void mostrarTela(String nome) {
+        layout.show(painelPrincipal, nome);
+    }
+
+    // Getters das views para os controllers
+    public TelaHome getTelaHome() {
+        return telaHome;
+    }
+
+    public TelaLogin getTelaLogin() {
+        return telaLogin;
+    }
+
+    public TelaCadastro getTelaCadastro() {
+        return telaCadastro;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,14 +75,15 @@ public class Cadastro extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1024, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -59,20 +103,21 @@ public class Cadastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cadastro().setVisible(true);
+                new TelaPrincipal().setVisible(true);
             }
         });
     }
