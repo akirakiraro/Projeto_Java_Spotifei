@@ -21,18 +21,26 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaCadastro telaCadastro;
     
     public TelaPrincipal() {
-        initComponents();
+//        initComponents();
+        
         
         layout = new CardLayout();
         painelPrincipal = new JPanel(layout);
 
         telaHome = new TelaHome();
+        telaLogin = new TelaLogin();
+        telaCadastro = new TelaCadastro();
 
         painelPrincipal.add(telaHome, "home");
         painelPrincipal.add(telaLogin, "login");
         painelPrincipal.add(telaCadastro, "cadastro");
+        
         add(painelPrincipal);
         mostrarTela("home");
+        setTitle("Spotifei");
+        setSize(1024, 600);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
     }
 
     public void mostrarTela(String nome) {
@@ -67,14 +75,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 1024, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
