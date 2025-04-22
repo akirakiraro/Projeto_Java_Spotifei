@@ -22,6 +22,7 @@ public class Main {
         // passa as views e conecta os controllers
         new HomeController(tela, tela.getTelaHome());
         new LoginController(tela, tela.getTelaLogin());
+        new CadastroController(tela, tela.getTelaCadastro());
     }
     
 }
