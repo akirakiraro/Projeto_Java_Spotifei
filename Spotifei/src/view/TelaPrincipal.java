@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import java.awt.CardLayout;
 import javax.swing.*;
 
-/**
- *
- * @author Akira
- */
 public class TelaPrincipal extends javax.swing.JFrame {
     
     private CardLayout layout;
@@ -21,8 +13,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaCadastro telaCadastro;
     
     public TelaPrincipal() {
-//        initComponents();
-        
         
         layout = new CardLayout();
         painelPrincipal = new JPanel(layout);
@@ -37,6 +27,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         
         add(painelPrincipal);
         mostrarTela("home");
+        
+        // dados da Propria tela
         setTitle("Spotifei");
         setSize(1024, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -47,7 +39,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         layout.show(painelPrincipal, nome);
     }
 
-    // Getters das views para os controllers
+    // Get das telas para os controllers
     public TelaHome getTelaHome() {
         return telaHome;
     }

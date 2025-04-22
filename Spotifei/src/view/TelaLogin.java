@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Akira
@@ -12,6 +14,24 @@ public class TelaLogin extends javax.swing.JPanel {
     
     public TelaLogin() {
         initComponents();
+    }
+    
+    public void setController(ActionListener controller) {
+        btnLogar.setActionCommand("Logar");
+        btnCadastro.setActionCommand("Cadastro");
+        btnVoltar.setActionCommand("Voltar");
+        
+        btnLogar.addActionListener(controller);
+        btnCadastro.addActionListener(controller);
+        btnVoltar.addActionListener(controller);
+    }
+    
+    public String getCampoUsuario() {
+        return loginUsuario.getText();
+    }
+
+    public String getCampoSenha() {
+        return new String(loginSenha.getPassword());
     }
 
     /**
@@ -23,30 +43,87 @@ public class TelaLogin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        txtTitulo = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JLabel();
+        loginUsuario = new javax.swing.JTextField();
+        loginSenha = new javax.swing.JPasswordField();
+        btnVoltar = new javax.swing.JButton();
+        btnCadastro = new javax.swing.JButton();
+        btnLogar = new javax.swing.JButton();
 
-        jButton1.setText("jButton1");
+        txtTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        txtTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        txtTitulo.setText("LOGIN");
+
+        txtUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtUsuario.setText("Usuario: ");
+
+        txtSenha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        txtSenha.setText("Senha: ");
+
+        btnVoltar.setText("Voltar");
+
+        btnCadastro.setText("Cadastro");
+
+        btnLogar.setText("Logar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(98, 98, 98)
-                .addComponent(jButton1)
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(loginSenha)
+                            .addComponent(loginUsuario))
+                        .addContainerGap())))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jButton1)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loginUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(loginSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
+                    .addComponent(btnLogar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnCadastro;
+    private javax.swing.JButton btnLogar;
+    private javax.swing.JButton btnVoltar;
+    private javax.swing.JPasswordField loginSenha;
+    private javax.swing.JTextField loginUsuario;
+    private javax.swing.JLabel txtSenha;
+    private javax.swing.JLabel txtTitulo;
+    private javax.swing.JLabel txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
