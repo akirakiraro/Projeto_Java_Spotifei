@@ -1,6 +1,9 @@
 
+import model.Conexao;
 import view.*;
 import controller.*;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,6 +19,15 @@ import controller.*;
 public class Main {
     
     public static void main(String[] args) {
+        
+        try {
+            Connection conn = Conexao.getConnection();
+            System.out.println("Conexão feita com sucesso!");
+            conn.close();
+        } catch (SQLException e) {
+            System.out.println("Erro ao conectar: " + e.getMessage());
+        }
+        
         TelaPrincipal tela = new TelaPrincipal();
         tela.setVisible(true);
 
