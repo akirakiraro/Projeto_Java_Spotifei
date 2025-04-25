@@ -6,6 +6,7 @@ package controller;
 
 import java.awt.event.*;
 import view.*;
+import model.*;
 
 /**
  *
@@ -31,15 +32,12 @@ public class CadastroController implements ActionListener {
 
         switch (comando) {
             case "Cadastrar":
-                String campoUsuario = telaCadastro.getCampoUsuario();
-                String campoEmailTelefone = telaCadastro.getCampoEmailTelefone();
-                String campoSenha = telaCadastro.getCampoSenha();
-                
-                System.out.println("Fazendo Cadastro com os dados: ");
-                System.out.println("Usuario: " + campoUsuario);
-                System.out.println("Email ou Telefone: " + campoEmailTelefone);
-                System.out.println("Senha: " + campoSenha);
-                // pega as informacoes para teste, ainda sem implementacao do banco de dados
+                Usuario user = new Usuario();
+                user.UsuarioEmail(
+                    telaCadastro.getCampoUsuario(),
+                    telaCadastro.getCampoEmailTelefone(),
+                    telaCadastro.getCampoSenha());
+                UsuarioDAO.adicionar(user);
                 break;
             case "Login":
                 telaPrincipal.mostrarTela("login");
