@@ -6,22 +6,23 @@ package controller;
 
 import java.awt.event.*;
 import view.*;
+import dao.*;
 
 /**
  *
  * @author Akira
  */
-public class HomeController implements ActionListener {
+public class LoginController implements ActionListener{
     
-    private TelaPrincipal telaPrincipal;
-    private TelaHome telaHome;
+    private Tela telaPrincipal;
+    private TelaLogin telaLogin;
     
-    public HomeController(TelaPrincipal telaPrincipal, TelaHome telaHome) {
+    public LoginController(Tela telaPrincipal, TelaLogin telaLogin) {
         this.telaPrincipal = telaPrincipal;
-        this.telaHome = telaHome;
+        this.telaLogin = telaLogin;
 
         // conecta eventos
-        this.telaHome.setController(this);
+        this.telaLogin.setController(this);
     }
 
     @Override
@@ -29,14 +30,17 @@ public class HomeController implements ActionListener {
         String comando = e.getActionCommand();
 
         switch (comando) {
-            case "Login":
-                telaPrincipal.mostrarTela("login");
+            case "Logar":
+                UsuarioDAO usuario = new UsuarioDAO();
+                
+                usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha());
+                telaPrincipal.mostrarTela("Usuario Inicio");
                 break;
             case "Cadastro":
                 telaPrincipal.mostrarTela("cadastro");
                 break;
-            case "Sair":
-                System.exit(0);
+            case "Voltar":
+                telaPrincipal.mostrarTela("home");
                 break;
         }
     }
