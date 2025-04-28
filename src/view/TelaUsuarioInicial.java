@@ -41,7 +41,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         btnPlayPause = new javax.swing.JButton();
         btnProximo = new javax.swing.JButton();
         Progresso = new javax.swing.JProgressBar();
-        Tempo = new javax.swing.JLabel();
+        txtTempo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setToolTipText("");
@@ -122,7 +122,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         jpnBaixo.setBackground(new java.awt.Color(51, 51, 51));
         jpnBaixo.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        Tempo.setText("jLabel1");
+        txtTempo.setText("00:00");
 
         javax.swing.GroupLayout jpnBaixoLayout = new javax.swing.GroupLayout(jpnBaixo);
         jpnBaixo.setLayout(jpnBaixoLayout);
@@ -142,7 +142,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Progresso, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Tempo, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
+                .addComponent(txtTempo, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jpnBaixoLayout.setVerticalGroup(
@@ -150,7 +150,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnBaixoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jpnBaixoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Tempo, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(txtTempo, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
                     .addComponent(btnLike, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDeslike, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -193,7 +193,6 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar Progresso;
-    private javax.swing.JLabel Tempo;
     private javax.swing.JButton btnDeslike;
     private javax.swing.JButton btnLike;
     private javax.swing.JButton btnPlayPause;
@@ -207,6 +206,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     private javax.swing.JPanel jpnPrincipal;
     private javax.swing.JLabel pngSpotifei;
     private javax.swing.JLabel txtBemVindo;
+    private javax.swing.JLabel txtTempo;
     private javax.swing.JTextField txtfieldPesquisa;
     // End of variables declaration//GEN-END:variables
 }

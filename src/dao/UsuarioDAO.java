@@ -14,32 +14,47 @@ public class UsuarioDAO {
     // Funcao para cadastrar alguem no SQL
     // So funciona se for minusculo no banco de dados
     public static void adicionar(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
-        try (Connection conn = Conexao.conectar();
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
+        String sqlPessoa = "INSERT INTO pessoa (nome, email, senha) VALUES (?, ?, ?) RETURNING id";
+        String sqlUsuario = "INSERT INTO usuario (id_usuario) VALUES (?)";
+        
+        try (Connection conn = Conexao.conectar()) {
+            // Inicia uma transação manual
+            conn.setAutoCommit(false);
             
-            // mostra no console
-            System.out.println("Fazendo Cadastro com os dados: ");
-            System.out.println("Usuario: " + usuario.getNome());
-            System.out.println("E-mail: " + usuario.getEmail());
-            System.out.println("Senha: " + usuario.getSenha());
-            
-            // add na string
-            stmt.setString(1, usuario.getNome());
-            stmt.setString(2, usuario.getEmail());
-            stmt.setString(3, usuario.getSenha());
-            stmt.executeUpdate();
+            // 1. Inserir na tabela pessoa
+            try (PreparedStatement stmtPessoa = conn.prepareStatement(sqlPessoa)) {
+                stmtPessoa.setString(1, usuario.getNome());
+                stmtPessoa.setString(2, usuario.getEmail());
+                stmtPessoa.setString(3, usuario.getSenha());
 
-            System.out.println("Usuario adicionado!");
+                ResultSet rs = stmtPessoa.executeQuery();
+                
+                if (rs.next()) {
+                    int idPessoa = rs.getInt("id");
+
+                    // 2. Inserir na tabela usuario usando o id gerado
+                    try (PreparedStatement stmtUsuario = conn.prepareStatement(sqlUsuario)) {
+                        stmtUsuario.setInt(1, idPessoa);
+                        stmtUsuario.executeUpdate();
+                    }
+                    
+                    // Finaliza a transação
+                    conn.commit();
+                
+                    System.out.println("Usuario cadastrado com sucesso!");
+                } else {
+                    conn.rollback();
+                    System.out.println("Erro ao cadastrar pessoa.");
+                }
+            }
         } catch (SQLException e) {
-            System.out.println("Erro ao adicionar: " + e.getMessage());
+        System.out.println("Erro ao adicionar usuario: " + e.getMessage());
         }
     }
     
-    
     // Funcao para validar o login do usuario
     public boolean validarLoginUsuario(String nome, String senha){
-        String sql = "SELECT * FROM usuarios WHERE nome = ? AND senha = ?";
+        String sql = "SELECT p.id FROM pessoa p " + "JOIN usuario u ON p.id = u.id_usuario " + "WHERE p.email = ? AND p.senha = ?";
 
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {

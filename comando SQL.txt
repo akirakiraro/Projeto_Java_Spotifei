@@ -1,0 +1,49 @@
+-- Tabela base
+CREATE TABLE pessoa (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE usuario (
+    id_usuario INT PRIMARY KEY,
+    FOREIGN KEY (id_usuario) REFERENCES pessoa(id)
+);
+
+CREATE TABLE artista (
+    id_artista INT PRIMARY KEY,
+    FOREIGN KEY (id_artista) REFERENCES pessoa(id)
+);
+
+CREATE TABLE administrador (
+    id_administrador INT PRIMARY KEY,
+    FOREIGN KEY (id_administrador) REFERENCES pessoa(id)
+);
+
+-- Tabela musica
+CREATE TABLE musica (
+    id SERIAL PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    duracao INT, -- duração em segundos
+    status INT,
+    id_artista INT NOT NULL,
+    FOREIGN KEY (id_artista) REFERENCES artista(id_artista)
+);
+
+-- Tabela Playlist
+CREATE TABLE playlist (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    id_usuario INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+);
+
+-- Tabela que liga Playlist e Música (playlist pode ter várias músicas)
+CREATE TABLE playlist_musica (
+    id_playlist INT,
+    id_musica INT,
+    PRIMARY KEY (id_playlist, id_musica),
+    FOREIGN KEY (id_playlist) REFERENCES playlist(id),
+    FOREIGN KEY (id_musica) REFERENCES musica(id)
+);

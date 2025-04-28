@@ -219,7 +219,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Progresso" min="-2" pref="600" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Tempo" pref="184" max="32767" attributes="0"/>
+                  <Component id="txtTempo" pref="184" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -229,7 +229,7 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="Tempo" pref="36" max="32767" attributes="0"/>
+                      <Component id="txtTempo" pref="36" max="32767" attributes="0"/>
                       <Component id="btnLike" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnDeslike" alignment="0" max="32767" attributes="0"/>
                       <Component id="btnVoltar" alignment="0" max="32767" attributes="0"/>
@@ -255,9 +255,9 @@
         </Component>
         <Component class="javax.swing.JProgressBar" name="Progresso">
         </Component>
-        <Component class="javax.swing.JLabel" name="Tempo">
+        <Component class="javax.swing.JLabel" name="txtTempo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
+            <Property name="text" type="java.lang.String" value="00:00"/>
           </Properties>
         </Component>
       </SubComponents>
