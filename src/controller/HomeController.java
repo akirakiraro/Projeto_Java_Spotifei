@@ -13,10 +13,10 @@ import view.*;
  */
 public class HomeController implements ActionListener {
     
-    private TelaPrincipal telaPrincipal;
+    private Tela telaPrincipal;
     private TelaHome telaHome;
     
-    public HomeController(TelaPrincipal telaPrincipal, TelaHome telaHome) {
+    public HomeController(Tela telaPrincipal, TelaHome telaHome) {
         this.telaPrincipal = telaPrincipal;
         this.telaHome = telaHome;
 

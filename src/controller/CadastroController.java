@@ -4,6 +4,7 @@
  */
 package controller;
 
+import dao.UsuarioDAO;
 import java.awt.event.*;
 import view.*;
 import model.*;
@@ -15,10 +16,10 @@ import model.*;
  * 
  */
 public class CadastroController implements ActionListener {
-    private TelaPrincipal telaPrincipal;
+    private Tela telaPrincipal;
     private TelaCadastro telaCadastro;
     
-    public CadastroController(TelaPrincipal telaPrincipal, TelaCadastro telaCadastro) {
+    public CadastroController(Tela telaPrincipal, TelaCadastro telaCadastro) {
         this.telaPrincipal = telaPrincipal;
         this.telaCadastro = telaCadastro;
 

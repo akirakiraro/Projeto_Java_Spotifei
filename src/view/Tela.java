@@ -3,7 +3,7 @@ package view;
 import java.awt.CardLayout;
 import javax.swing.*;
 
-public class TelaPrincipal extends javax.swing.JFrame {
+public class Tela extends javax.swing.JFrame {
     
     private CardLayout layout;
     private JPanel painelPrincipal;
@@ -11,8 +11,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private TelaHome telaHome;
     private TelaLogin telaLogin;
     private TelaCadastro telaCadastro;
+    private TelaUsuarioInicial telaUsuarioInicial;
     
-    public TelaPrincipal() {
+    public Tela() {
         
         layout = new CardLayout();
         painelPrincipal = new JPanel(layout);
@@ -20,10 +21,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaHome = new TelaHome();
         telaLogin = new TelaLogin();
         telaCadastro = new TelaCadastro();
+        telaUsuarioInicial = new TelaUsuarioInicial();
 
         painelPrincipal.add(telaHome, "home");
         painelPrincipal.add(telaLogin, "login");
         painelPrincipal.add(telaCadastro, "cadastro");
+        painelPrincipal.add(telaUsuarioInicial, "Usuario Inicio");
         
         add(painelPrincipal);
         mostrarTela("home");
@@ -50,6 +53,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
     public TelaCadastro getTelaCadastro() {
         return telaCadastro;
+    }
+    
+    public TelaUsuarioInicial getTelaUsuarioInicial() {
+        return telaUsuarioInicial;
     }
     
     /**
@@ -95,21 +102,23 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new Tela().setVisible(true);
             }
         });
     }

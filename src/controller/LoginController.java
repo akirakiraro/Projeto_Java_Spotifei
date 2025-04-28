@@ -6,6 +6,7 @@ package controller;
 
 import java.awt.event.*;
 import view.*;
+import dao.*;
 
 /**
  *
@@ -13,10 +14,10 @@ import view.*;
  */
 public class LoginController implements ActionListener{
     
-    private TelaPrincipal telaPrincipal;
+    private Tela telaPrincipal;
     private TelaLogin telaLogin;
     
-    public LoginController(TelaPrincipal telaPrincipal, TelaLogin telaLogin) {
+    public LoginController(Tela telaPrincipal, TelaLogin telaLogin) {
         this.telaPrincipal = telaPrincipal;
         this.telaLogin = telaLogin;
 
@@ -30,13 +31,10 @@ public class LoginController implements ActionListener{
 
         switch (comando) {
             case "Logar":
-                String campoUsuario = telaLogin.getCampoUsuario();
-                String campoSenha = telaLogin.getCampoSenha();
+                UsuarioDAO usuario = new UsuarioDAO();
                 
-                System.out.println("Fazendo login com os dados: ");
-                System.out.println("Usuario: " + campoUsuario);
-                System.out.println("Senha: " + campoSenha);
-                // pega as informacoes para teste, ainda sem implementacao do banco de dados
+                usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha());
+                telaPrincipal.mostrarTela("Usuario Inicio");
                 break;
             case "Cadastro":
                 telaPrincipal.mostrarTela("cadastro");

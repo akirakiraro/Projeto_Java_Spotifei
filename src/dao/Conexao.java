@@ -1,4 +1,4 @@
-package model;
+package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,8 +10,12 @@ public class Conexao {
         Connection SQL = null;
         
         // nome do seu banco
+        // (Akira) Deixei o meu como: "jdbc:postgresql://localhost:4352/SpotiFEI"
         // seu usuário PostgreSQL
+        // (Akira) Deixei o meu como: "postgres"
         // sua senha PostgreSQL
+        // (Akira) Deixei o meu como: "4352"
+        
         String url = "jdbc:postgresql://localhost:4352/SpotiFEI";
         String usuario = "postgres";
         String senha = "4352";

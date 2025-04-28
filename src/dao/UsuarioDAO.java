@@ -1,7 +1,8 @@
-package model;
+package dao;
 
 import model.*;
 import java.sql.*;
+import model.Usuario;
 
 /**
  *  Fazer funcao para adicionar ou no email, ou no telefone ou os dois juntos
@@ -35,6 +36,35 @@ public class UsuarioDAO {
         }
     }
     
+    
+    // Funcao para validar o login do usuario
+    public boolean validarLoginUsuario(String nome, String senha){
+        String sql = "SELECT * FROM usuarios WHERE nome = ? AND senha = ?";
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, nome);
+            stmt.setString(2, senha);
+
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                // Usuario valido
+                System.out.println("Validacao do usuario valida!");
+                return true;
+            } else {
+                // Usuario ou senha invalido
+                System.out.println("Validacao do usuario invalida!");
+                return false;
+            }
+            
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao fazer login: " + e.getMessage());
+            return false;
+        }
+    }
     
     
 }
