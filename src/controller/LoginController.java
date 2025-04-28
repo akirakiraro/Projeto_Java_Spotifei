@@ -33,9 +33,14 @@ public class LoginController implements ActionListener{
             case "Logar":
                 UsuarioDAO usuario = new UsuarioDAO();
                 
-                usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha());
-                telaPrincipal.mostrarTela("Usuario Inicio");
-                break;
+                if (usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
+                    // login certo
+                    telaPrincipal.mostrarTela("Usuario Inicio");
+                    break;
+                } else {
+                    // login errado
+                    break;
+                }
             case "Cadastro":
                 telaPrincipal.mostrarTela("cadastro");
                 break;
