@@ -75,6 +75,12 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         lista.addElement(musica);
     }
     
+    public void addListaPlaylist(String nome){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaPlaylist.getModel();
+        lista.addElement(nome);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
