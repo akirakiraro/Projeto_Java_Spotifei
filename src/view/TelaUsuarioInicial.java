@@ -19,18 +19,23 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     public TelaUsuarioInicial() {
         initComponents();
         
-        DefaultListModel<String> modelo = new DefaultListModel<>();
-        listaMusicas.setModel(modelo);
+        DefaultListModel<String> modeloPrincipal = new DefaultListModel<>();
+        listaMusicas.setModel(modeloPrincipal);
         
         limparListaMusicas();
     }
     
     public void setController(ActionListener controller) {
+        btnInicio.setActionCommand("Historico");
+        btnPlaylist.setActionCommand("Playlist");
+        btnHistorico.setActionCommand("Historico");
+        
         btnDeslike.setActionCommand("Deslike");
         btnLike.setActionCommand("Like");
         btnPlayPause.setActionCommand("PlayPause");
         btnProximo.setActionCommand("Proximo");
         btnVoltar.setActionCommand("Voltar");
+        
         btnMenu.setActionCommand("Menu");
         
         btnDeslike.addActionListener(controller);
@@ -42,8 +47,8 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     }
     
     public void limparListaMusicas(){
-        DefaultListModel<String> modelo = (DefaultListModel<String>) listaMusicas.getModel();
-        modelo.clear();
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
+        lista.clear();
     }
     
     /**
@@ -61,12 +66,12 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         txtfieldPesquisa = new javax.swing.JTextField();
         jpnPlaylist = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listaPlaylist = new javax.swing.JList<>();
         txtPlaylist = new javax.swing.JLabel();
         btnInicio = new javax.swing.JButton();
         txtPlaylist1 = new javax.swing.JLabel();
-        btnInicio1 = new javax.swing.JButton();
-        btnInicio2 = new javax.swing.JButton();
+        btnPlaylist = new javax.swing.JButton();
+        btnHistorico = new javax.swing.JButton();
         jpnPrincipal = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaMusicas = new javax.swing.JList<>();
@@ -126,15 +131,15 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         jpnPlaylist.setBackground(new java.awt.Color(102, 102, 102));
         jpnPlaylist.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
-        jList1.setBackground(new java.awt.Color(153, 153, 153));
-        jList1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jList1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listaPlaylist.setBackground(new java.awt.Color(153, 153, 153));
+        listaPlaylist.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        listaPlaylist.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        listaPlaylist.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listaPlaylist);
 
         txtPlaylist.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         txtPlaylist.setForeground(new java.awt.Color(51, 204, 0));
@@ -151,23 +156,23 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         txtPlaylist1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtPlaylist1.setText("PLAYLIST");
 
-        btnInicio1.setBackground(new java.awt.Color(51, 51, 51));
-        btnInicio1.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
-        btnInicio1.setForeground(new java.awt.Color(0, 204, 0));
-        btnInicio1.setText("PLAYLIST");
-        btnInicio1.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaylist.setBackground(new java.awt.Color(51, 51, 51));
+        btnPlaylist.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
+        btnPlaylist.setForeground(new java.awt.Color(0, 204, 0));
+        btnPlaylist.setText("PLAYLIST");
+        btnPlaylist.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicio1ActionPerformed(evt);
+                btnPlaylistActionPerformed(evt);
             }
         });
 
-        btnInicio2.setBackground(new java.awt.Color(51, 51, 51));
-        btnInicio2.setFont(new java.awt.Font("Arial", 1, 31)); // NOI18N
-        btnInicio2.setForeground(new java.awt.Color(0, 204, 0));
-        btnInicio2.setText("HISTORICO");
-        btnInicio2.addActionListener(new java.awt.event.ActionListener() {
+        btnHistorico.setBackground(new java.awt.Color(51, 51, 51));
+        btnHistorico.setFont(new java.awt.Font("Arial", 1, 31)); // NOI18N
+        btnHistorico.setForeground(new java.awt.Color(0, 204, 0));
+        btnHistorico.setText("HISTORICO");
+        btnHistorico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInicio2ActionPerformed(evt);
+                btnHistoricoActionPerformed(evt);
             }
         });
 
@@ -182,8 +187,8 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                     .addComponent(jScrollPane1)
                     .addComponent(txtPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtPlaylist1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInicio1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnInicio2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHistorico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpnPlaylistLayout.setVerticalGroup(
@@ -192,9 +197,9 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(btnInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInicio1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnInicio2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHistorico, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtPlaylist)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -362,27 +367,26 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInicio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio1ActionPerformed
+    private void btnPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaylistActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicio1ActionPerformed
+    }//GEN-LAST:event_btnPlaylistActionPerformed
 
-    private void btnInicio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicio2ActionPerformed
+    private void btnHistoricoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoricoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnInicio2ActionPerformed
+    }//GEN-LAST:event_btnHistoricoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar Progresso;
     private javax.swing.JButton btnDeslike;
+    private javax.swing.JButton btnHistorico;
     private javax.swing.JButton btnInicio;
-    private javax.swing.JButton btnInicio1;
-    private javax.swing.JButton btnInicio2;
     private javax.swing.JButton btnLike;
     private javax.swing.JButton btnMenu;
     private javax.swing.JButton btnPlayPause;
+    private javax.swing.JButton btnPlaylist;
     private javax.swing.JButton btnProximo;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel jpnBaixo;
@@ -390,6 +394,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     private javax.swing.JPanel jpnPlaylist;
     private javax.swing.JPanel jpnPrincipal;
     private javax.swing.JList<String> listaMusicas;
+    private javax.swing.JList<String> listaPlaylist;
     private javax.swing.JLabel pngSpotifei;
     private javax.swing.JLabel txtArtista;
     private javax.swing.JLabel txtBemVindo;

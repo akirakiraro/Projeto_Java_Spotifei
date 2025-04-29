@@ -133,8 +133,8 @@
                       <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtPlaylist" alignment="0" max="32767" attributes="0"/>
                       <Component id="txtPlaylist1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnInicio1" alignment="0" max="32767" attributes="0"/>
-                      <Component id="btnInicio2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnPlaylist" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnHistorico" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -146,9 +146,9 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnInicio" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnInicio1" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="btnPlaylist" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnInicio2" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="btnHistorico" min="-2" pref="60" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtPlaylist" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -168,7 +168,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JList" name="jList1">
+            <Component class="javax.swing.JList" name="listaPlaylist">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
@@ -235,7 +235,7 @@
             <Property name="text" type="java.lang.String" value="PLAYLIST"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnInicio1">
+        <Component class="javax.swing.JButton" name="btnPlaylist">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -249,10 +249,10 @@
             <Property name="text" type="java.lang.String" value="PLAYLIST"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInicio1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPlaylistActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnInicio2">
+        <Component class="javax.swing.JButton" name="btnHistorico">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
@@ -266,7 +266,7 @@
             <Property name="text" type="java.lang.String" value="HISTORICO"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInicio2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHistoricoActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
