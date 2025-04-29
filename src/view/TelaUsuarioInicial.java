@@ -26,27 +26,33 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     }
     
     public void setController(ActionListener controller) {
-        btnInicio.setActionCommand("Historico");
-        btnPlaylist.setActionCommand("Playlist");
-        btnHistorico.setActionCommand("Historico");
-        
-        btnDeslike.setActionCommand("Deslike");
-        btnLike.setActionCommand("Like");
-        btnPlayPause.setActionCommand("PlayPause");
-        btnProximo.setActionCommand("Proximo");
-        btnVoltar.setActionCommand("Voltar");
-        
+        // botoes na parte de cima
         btnMenu.setActionCommand("Menu");
-        
-        btnDeslike.addActionListener(controller);
-        btnLike.addActionListener(controller);
-        btnPlayPause.addActionListener(controller);
-        btnProximo.addActionListener(controller);
-        btnVoltar.addActionListener(controller);
         btnMenu.addActionListener(controller);
+        
+        // botoes na parte lateral
+        btnInicio.setActionCommand("Historico");
+        btnInicio.addActionListener(controller);
+        btnPlaylist.setActionCommand("Playlist");
+        btnPlaylist.addActionListener(controller);
+        btnHistorico.setActionCommand("Historico");
+        btnHistorico.addActionListener(controller);
+        
+        // botoes na parte de baixo
+        btnDeslike.setActionCommand("Deslike");
+        btnDeslike.addActionListener(controller);
+        btnLike.setActionCommand("Like");
+        btnLike.addActionListener(controller);
+        btnPlayPause.setActionCommand("PlayPause");
+        btnPlayPause.addActionListener(controller);
+        btnProximo.setActionCommand("Proximo");
+        btnProximo.addActionListener(controller);
+        btnVoltar.setActionCommand("Voltar");
+        btnVoltar.addActionListener(controller);   
     }
     
     public void limparListaMusicas(){
+        // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.clear();
     }
