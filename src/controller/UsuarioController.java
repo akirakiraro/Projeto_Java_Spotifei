@@ -26,19 +26,27 @@ public class UsuarioController implements ActionListener {
         String comando = e.getActionCommand();
         
         switch (comando) {
-            case "Deslike":
-                
+            // btns parte de cima
+            case "Menu":
+                telaPrincipal.mostrarTela("home");
                 break;
-            case "Like":
+            // botoes parte lateral
+            case "Inicio":
+                break;
+            case "Playlist":
+                break;
+            case "Historico":
+                break;
+            // botoes parte baixo
+            case "like":
+                break;
+            case "Deslike":
                 break;
             case "Voltar":
                 break;
             case "PlayPause":
                 break;
             case "Proximo":
-                break;
-            case "Menu":
-                telaPrincipal.mostrarTela("home");
                 break;
         }
     }

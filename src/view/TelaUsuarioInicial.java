@@ -19,10 +19,16 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     public TelaUsuarioInicial() {
         initComponents();
         
+        // Incializa a lista de Musicas
         DefaultListModel<String> modeloPrincipal = new DefaultListModel<>();
         listaMusicas.setModel(modeloPrincipal);
         
+        // Inicializa a lsita de playlist
+        DefaultListModel<String> modeloPlaylist = new DefaultListModel<>();
+        listaPlaylist.setModel(modeloPlaylist);
+        
         limparListaMusicas();
+        limparListaPlaylist();
     }
     
     public void setController(ActionListener controller) {
@@ -31,7 +37,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         btnMenu.addActionListener(controller);
         
         // botoes na parte lateral
-        btnInicio.setActionCommand("Historico");
+        btnInicio.setActionCommand("Inicio");
         btnInicio.addActionListener(controller);
         btnPlaylist.setActionCommand("Playlist");
         btnPlaylist.addActionListener(controller);
@@ -55,6 +61,18 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.clear();
+    }
+    
+    public void limparListaPlaylist(){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaPlaylist.getModel();
+        lista.clear();
+    }
+    
+    public void addListaMusica(String musica){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
+        lista.addElement(musica);
     }
     
     /**

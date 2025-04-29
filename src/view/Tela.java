@@ -33,7 +33,7 @@ public class Tela extends javax.swing.JFrame {
         
         // dados da Propria tela
         setTitle("Spotifei");
-        setSize(1200, 800);
+        setSize(1100, 800);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
