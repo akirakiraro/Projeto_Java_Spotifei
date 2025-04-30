@@ -12,6 +12,8 @@ public class Tela extends javax.swing.JFrame {
     private TelaLogin telaLogin;
     private TelaCadastro telaCadastro;
     private TelaUsuarioInicial telaUsuarioInicial;
+    private TelaHistorico telaHistorico;
+    private TelaPlaylist telaPlaylist;
     
     public Tela() {
         
@@ -22,20 +24,25 @@ public class Tela extends javax.swing.JFrame {
         telaLogin = new TelaLogin();
         telaCadastro = new TelaCadastro();
         telaUsuarioInicial = new TelaUsuarioInicial();
+        telaHistorico = new TelaHistorico();
+        telaPlaylist = new TelaPlaylist();
 
         painelPrincipal.add(telaHome, "home");
         painelPrincipal.add(telaLogin, "login");
         painelPrincipal.add(telaCadastro, "cadastro");
-        painelPrincipal.add(telaUsuarioInicial, "Usuario Inicio");
+        painelPrincipal.add(telaUsuarioInicial, "usuario Inicio");
+        painelPrincipal.add(telaHistorico, "historico");
+        painelPrincipal.add(telaPlaylist, "playlist");
         
         add(painelPrincipal);
         mostrarTela("home");
         
         // dados da Propria tela
         setTitle("Spotifei");
-        setSize(1200, 800);
+        setSize(1100, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     public void mostrarTela(String nome) {
@@ -58,6 +65,12 @@ public class Tela extends javax.swing.JFrame {
     public TelaUsuarioInicial getTelaUsuarioInicial() {
         return telaUsuarioInicial;
     }
+    public TelaHistorico getTelaHistorico() {
+        return telaHistorico;
+    }
+    public TelaPlaylist getTelaPlaylist() {
+        return telaPlaylist;
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,6 +82,7 @@ public class Tela extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
