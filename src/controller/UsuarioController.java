@@ -34,8 +34,10 @@ public class UsuarioController implements ActionListener {
             case "Inicio":
                 break;
             case "Playlist":
+                telaPrincipal.mostrarTela("playlist");
                 break;
             case "Historico":
+                telaPrincipal.mostrarTela("historico");
                 break;
             // botoes parte baixo
             case "like":

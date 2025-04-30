@@ -44,6 +44,12 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         btnHistorico.setActionCommand("Historico");
         btnHistorico.addActionListener(controller);
         
+        // botoes na tela principal
+        btnAddMusicaPlaylist.setActionCommand("Add musica playlist");
+        btnAddMusicaPlaylist.addActionListener(controller);
+        btnRemoverMusicaPlaylist.setActionCommand("Rmv musica playlist");
+        btnRemoverMusicaPlaylist.addActionListener(controller);
+        
         // botoes na parte de baixo
         btnDeslike.setActionCommand("Deslike");
         btnDeslike.addActionListener(controller);
@@ -112,6 +118,9 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         txtNomeGenero = new javax.swing.JLabel();
         txtDuracao = new javax.swing.JLabel();
         txtDuracaoMusica = new javax.swing.JLabel();
+        combolistaPlaylist = new javax.swing.JComboBox<>();
+        btnAddMusicaPlaylist = new javax.swing.JButton();
+        btnRemoverMusicaPlaylist = new javax.swing.JButton();
         jpnBaixo = new javax.swing.JPanel();
         btnLike = new javax.swing.JButton();
         btnDeslike = new javax.swing.JButton();
@@ -263,6 +272,12 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
 
         txtDuracaoMusica.setText("00:00");
 
+        combolistaPlaylist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        btnAddMusicaPlaylist.setText("Adicionar");
+
+        btnRemoverMusicaPlaylist.setText("Remover");
+
         javax.swing.GroupLayout jpnPrincipalLayout = new javax.swing.GroupLayout(jpnPrincipal);
         jpnPrincipal.setLayout(jpnPrincipalLayout);
         jpnPrincipalLayout.setHorizontalGroup(
@@ -280,11 +295,14 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtNomeArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtNomeGenero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(txtNomeGenero, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)))
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
                         .addComponent(txtDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDuracaoMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(txtDuracaoMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAddMusicaPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(combolistaPlaylist, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRemoverMusicaPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jpnPrincipalLayout.setVerticalGroup(
@@ -307,7 +325,12 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                         .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtDuracao, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                             .addComponent(txtDuracaoMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(combolistaPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAddMusicaPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnRemoverMusicaPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -408,6 +431,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JProgressBar Progresso;
+    private javax.swing.JButton btnAddMusicaPlaylist;
     private javax.swing.JButton btnDeslike;
     private javax.swing.JButton btnHistorico;
     private javax.swing.JButton btnInicio;
@@ -416,7 +440,9 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     private javax.swing.JButton btnPlayPause;
     private javax.swing.JButton btnPlaylist;
     private javax.swing.JButton btnProximo;
+    private javax.swing.JButton btnRemoverMusicaPlaylist;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JComboBox<String> combolistaPlaylist;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel jpnBaixo;

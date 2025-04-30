@@ -35,7 +35,7 @@ public class LoginController implements ActionListener{
                 
                 if (usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
                     // login certo
-                    telaPrincipal.mostrarTela("Usuario Inicio");
+                    telaPrincipal.mostrarTela("usuario Inicio");
                     break;
                 } else {
                     // login errado

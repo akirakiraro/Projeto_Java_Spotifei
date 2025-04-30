@@ -24,6 +24,8 @@ public class Main {
         new LoginController(tela, tela.getTelaLogin());
         new CadastroController(tela, tela.getTelaCadastro());
         new UsuarioController(tela, tela.getTelaUsuarioInicial());
+        new PlaylistController(tela, tela.getTelaPlaylist());
+        new HistoricoController(tela, tela.getTelaHistorico());
     }
     
 }
