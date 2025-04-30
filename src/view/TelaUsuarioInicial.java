@@ -134,6 +134,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         setBackground(new java.awt.Color(51, 51, 51));
         setToolTipText("");
         setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
+        setMaximumSize(new java.awt.Dimension(1024, 600));
 
         jpnCima.setBackground(new java.awt.Color(51, 51, 51));
         jpnCima.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
@@ -162,7 +163,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                 .addGroup(jpnCimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pngSpotifei, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jpnCimaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtBemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                        .addComponent(txtBemVindo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtfieldPesquisa, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)))
                 .addContainerGap())
         );

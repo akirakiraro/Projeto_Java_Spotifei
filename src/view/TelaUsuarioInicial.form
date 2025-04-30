@@ -9,6 +9,9 @@
     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
       <Font name="Arial" size="24" style="0"/>
     </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1024, 600]"/>
+    </Property>
   </Properties>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
@@ -89,7 +92,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="pngSpotifei" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="txtBemVindo" alignment="3" pref="88" max="32767" attributes="0"/>
+                          <Component id="txtBemVindo" alignment="3" max="32767" attributes="0"/>
                           <Component id="txtfieldPesquisa" alignment="3" pref="88" max="32767" attributes="0"/>
                       </Group>
                   </Group>
