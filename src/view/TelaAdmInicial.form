@@ -16,13 +16,73 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtTitulo" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="btnConsultaUsuarios" max="32767" attributes="0"/>
+                          <Component id="btnCadastroExcluirMusicas" pref="244" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnCadastroArtista" pref="244" max="32767" attributes="0"/>
+                          <Component id="btnEstatisticas" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="txtTitulo" min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="btnCadastroExcluirMusicas" pref="118" max="32767" attributes="0"/>
+                  <Component id="btnCadastroArtista" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btnEstatisticas" pref="118" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="btnConsultaUsuarios" max="32767" attributes="0"/>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="txtTitulo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Adm"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCadastroExcluirMusicas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastrar e Excluir Musicas"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnCadastroArtista">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastrar Artista"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnConsultaUsuarios">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Consultar Usuarios"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnEstatisticas">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ver Estatisticas"/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

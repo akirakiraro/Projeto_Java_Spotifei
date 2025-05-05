@@ -32,8 +32,12 @@ public class LoginController implements ActionListener{
         switch (comando) {
             case "Logar":
                 UsuarioDAO usuario = new UsuarioDAO();
+                AdminDAO admin = new AdminDAO();
                 
-                if (usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
+                if (admin.validarLoginAdmin(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
+                    System.out.println("tela admin");
+                    break;
+                } else if (usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
                     // login certo
                     telaPrincipal.mostrarTela("usuario Inicio");
                     break;

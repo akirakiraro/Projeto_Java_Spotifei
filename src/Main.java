@@ -1,7 +1,7 @@
 import model.*;
 import view.*;
 import controller.*;
-import dao.Conexao;
+import dao.*;
 
 
 
@@ -14,6 +14,8 @@ public class Main {
             System.out.println("\n\nErro na conexao com o banco de dados.");
             System.exit(0);
         }
+        
+        AdminDAO.AddAdmin();
         
         // Inicia a tela principal
         Tela tela = new Tela();
