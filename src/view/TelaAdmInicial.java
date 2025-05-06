@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Akira
@@ -17,6 +19,17 @@ public class TelaAdmInicial extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void setController(ActionListener controller) {
+        btnCadastroArtista.setActionCommand("Cadastro Artista");
+        btnCadastroArtista.addActionListener(controller);
+        btnCadastroExcluirMusicas.setActionCommand("Cadastro Excluir Musica");
+        btnCadastroExcluirMusicas.addActionListener(controller);
+        btnConsultaUsuarios.setActionCommand("Consulta");
+        btnConsultaUsuarios.addActionListener(controller);
+        btnEstatisticas.setActionCommand("Estatistica");
+        btnEstatisticas.addActionListener(controller);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -71,10 +84,9 @@ public class TelaAdmInicial extends javax.swing.JPanel {
                     .addComponent(btnCadastroArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnEstatisticas, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addComponent(btnConsultaUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(btnEstatisticas, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
+                    .addComponent(btnConsultaUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

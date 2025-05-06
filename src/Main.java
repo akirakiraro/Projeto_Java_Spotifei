@@ -28,6 +28,7 @@ public class Main {
         new UsuarioController(tela, tela.getTelaUsuarioInicial());
         new PlaylistController(tela, tela.getTelaPlaylist());
         new HistoricoController(tela, tela.getTelaHistorico());
+        new AdmController(tela, tela.getTelaAdmInicial());
     }
     
 }

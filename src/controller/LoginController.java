@@ -35,7 +35,7 @@ public class LoginController implements ActionListener{
                 AdminDAO admin = new AdminDAO();
                 
                 if (admin.validarLoginAdmin(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
-                    System.out.println("tela admin");
+                    telaPrincipal.mostrarTela("adm Inicio");
                     break;
                 } else if (usuario.validarLoginUsuario(telaLogin.getCampoUsuario(), telaLogin.getCampoSenha()) == true){
                     // login certo

@@ -2,23 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaCadastroArtista.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaConsultaUsuarios.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaCadastroExcluirMusica.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaCadastro.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaAdmInicial.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/Tela.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaHome.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaHistorico.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaLogin.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaPlaylist.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/view/TelaUsuarioInicial.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/controller/HomeController.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/controller/LoginController.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/dao/UsuarioDAO.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/dao/AdminDAO.java</file>
-            <file>file:/C:/Users/Akira/Desktop/FEI/GitHub/Projeto_Java_Spotifei/src/Main.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
