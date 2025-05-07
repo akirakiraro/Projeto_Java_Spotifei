@@ -5,6 +5,7 @@ import controller.usuario.PlaylistController;
 import controller.usuario.HistoricoController;
 import controller.usuario.UsuarioController;
 import controller.adm.AdmController;
+import controller.adm.ArtistaController;
 import model.*;
 import view.*;
 import dao.*;
@@ -35,6 +36,7 @@ public class Main {
         new PlaylistController(tela, tela.getTelaPlaylist());
         new HistoricoController(tela, tela.getTelaHistorico());
         new AdmController(tela, tela.getTelaAdmInicial());
+        new ArtistaController(tela, tela.getTelaCadastroArtista());
     }
     
 }

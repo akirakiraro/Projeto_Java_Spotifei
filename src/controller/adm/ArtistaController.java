@@ -4,24 +4,24 @@
  */
 package controller.adm;
 
-import view.Adm.TelaAdmInicial;
 import java.awt.event.*;
-import view.*;
+import view.Adm.TelaCadastroArtista;
+import view.Tela;
 
 /**
  *
- * @author unieryatate
+ * @author Akira
  */
-public class AdmController implements ActionListener{
+public class ArtistaController implements ActionListener{
     private Tela telaPrincipal;
-    private TelaAdmInicial telaAdmInicial;
+    private TelaCadastroArtista telaCadastroArtista;
     
-    public AdmController(Tela telaPrincipal, TelaAdmInicial telaAdmInicial) {
+    public ArtistaController(Tela telaPrincipal, TelaCadastroArtista telaCadastroArtista) {
         this.telaPrincipal = telaPrincipal;
-        this.telaAdmInicial = telaAdmInicial;
+        this.telaCadastroArtista = telaCadastroArtista;
 
         // conecta eventos
-        this.telaAdmInicial.setController(this);
+        this.telaCadastroArtista.setController(this);
     }
 
     @Override
@@ -30,10 +30,10 @@ public class AdmController implements ActionListener{
 
         switch (comando) {
             case "Cadastro Artista":
-                telaPrincipal.mostrarTela("cadastro Artista");
+                telaPrincipal.mostrarTela("login");
                 break;
-            case "Sair":
-                System.exit(0);
+            case "Voltar":
+                telaPrincipal.mostrarTela("adm Inicio");
                 break;
         }
     }
