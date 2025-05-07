@@ -4,9 +4,11 @@
  */
 package controller.adm;
 
+import dao.ArtistaDAO;
 import java.awt.event.*;
 import view.Adm.TelaCadastroArtista;
 import view.Tela;
+import model.Artista;
 
 /**
  *
@@ -30,7 +32,9 @@ public class ArtistaController implements ActionListener{
 
         switch (comando) {
             case "Cadastrar":
-                System.out.println("Cadastrando o usuario: ");
+                Artista artista = new Artista(telaCadastroArtista.getCampoNome());
+                System.out.println("Cadastrando o usuario: " + artista.getNome());
+                ArtistaDAO.adicionar(artista);
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");

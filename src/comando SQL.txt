@@ -8,7 +8,7 @@ CREATE TABLE usuario (
 );
 
 CREATE TABLE artista (
-    id_artista INT PRIMARY KEY,
+    id_artista SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL
 );
 
