@@ -23,7 +23,6 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
         DefaultListModel<String> modeloPrincipal = new DefaultListModel<>();
         listaArtista.setModel(modeloPrincipal);
         
-        limparLista();
     }
     public void setController(ActionListener controller) {
         btnVoltar.setActionCommand("Voltar");
@@ -40,6 +39,12 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
     
     public String getCampoNome() {
         return campoNome.getText();
+    }
+    
+    public void addListaArtista(String artista){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaArtista.getModel();
+        lista.addElement(artista);
     }
     
     /**
@@ -65,7 +70,7 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
         txtCadastro.setText("Cadastro");
 
         listaArtista.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "a", "s", "d", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
