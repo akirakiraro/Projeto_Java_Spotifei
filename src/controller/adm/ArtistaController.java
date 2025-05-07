@@ -29,8 +29,8 @@ public class ArtistaController implements ActionListener{
         String comando = e.getActionCommand();
 
         switch (comando) {
-            case "Cadastro Artista":
-                telaPrincipal.mostrarTela("login");
+            case "Cadastrar":
+                System.out.println("Cadastrando o usuario: ");
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");
