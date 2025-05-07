@@ -6,6 +6,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.Artista;
 
@@ -15,16 +16,27 @@ import model.Artista;
  */
 public class ArtistaDAO {
     public static void adicionar(Artista artista) {
+        String verificarSql = "SELECT * FROM artista WHERE nome = ?";
         String sqlUsuario = "INSERT INTO artista (nome) VALUES (?)";
         
         try (Connection conn = Conexao.conectar();
-             PreparedStatement stmt = conn.prepareStatement(sqlUsuario)) {
-             
-                stmt.setString(1, artista.getNome());
+             PreparedStatement stmtVerificacao = conn.prepareStatement(verificarSql)) {
+            
+                // Verifica se tem algum nome igual no banco de dados
+                stmtVerificacao.setString(1, artista.getNome());
+                ResultSet rs = stmtVerificacao.executeQuery();
 
-                stmt.executeUpdate();
+                if (rs.next()) {
+                    System.out.println("Nome ja existe.");
+                    return;
+                }
+                try (PreparedStatement stmt = conn.prepareStatement(sqlUsuario)) {
+                    stmt.setString(1, artista.getNome());
+                    stmt.executeUpdate();
+                }
                 
                 System.out.println("Artista cadastrado com sucesso!");
+                
         } catch (SQLException e) {
         System.out.println("Erro ao adicionar o artista: " + e.getMessage());
         }
