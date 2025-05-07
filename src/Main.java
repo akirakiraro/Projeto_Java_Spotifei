@@ -1,7 +1,7 @@
 import model.*;
 import view.*;
 import controller.*;
-import dao.Conexao;
+import dao.*;
 
 
 
@@ -15,6 +15,8 @@ public class Main {
             System.exit(0);
         }
         
+        AdminDAO.AddAdmin();
+        
         // Inicia a tela principal
         Tela tela = new Tela();
         tela.setVisible(true);
@@ -26,6 +28,7 @@ public class Main {
         new UsuarioController(tela, tela.getTelaUsuarioInicial());
         new PlaylistController(tela, tela.getTelaPlaylist());
         new HistoricoController(tela, tela.getTelaHistorico());
+        new AdmController(tela, tela.getTelaAdmInicial());
     }
     
 }

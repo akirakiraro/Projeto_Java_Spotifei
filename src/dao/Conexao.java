@@ -16,9 +16,9 @@ public class Conexao {
         // sua senha PostgreSQL
         // (Akira) Deixei o meu como: "4352"
         
-        String url = "jdbc:postgresql://localhost:4352/SpotiFEI";
+        String url = "jdbc:postgresql://localhost:5432/SpotiFEI";
         String usuario = "postgres";
-        String senha = "4352";
+        String senha = "fei";
 
         try {
             SQL = DriverManager.getConnection(url, usuario, senha);

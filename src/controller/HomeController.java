@@ -4,6 +4,7 @@
  */
 package controller;
 
+import view.conta.TelaHome;
 import java.awt.event.*;
 import view.*;
 

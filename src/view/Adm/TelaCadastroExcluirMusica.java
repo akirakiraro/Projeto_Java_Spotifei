@@ -2,18 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package view;
+package view.Adm;
 
 /**
  *
  * @author Akira
  */
-public class TelaAdmInicial extends javax.swing.JPanel {
+public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
 
     /**
-     * Creates new form TelaAdmInicial
+     * Creates new form TelaCadastroExcluirMusica
      */
-    public TelaAdmInicial() {
+    public TelaCadastroExcluirMusica() {
         initComponents();
     }
 

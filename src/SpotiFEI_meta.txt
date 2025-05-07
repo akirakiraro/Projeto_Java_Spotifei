@@ -1,0 +1,64 @@
+
+SPOTIFEI
+
+Data entrega: 22/05/2025
+
+Vai criando as branchs conforme o necessario.
+
+Concluido:
+
+    [X] Organização dos arquivos {#0_Inicio}
+    [X] Tela Home {#1_Home_Login_Cadastro}
+    [X] Tela Login {#1_Home_Login_Cadastro}
+    [X] Tela Cadastro {#1_Home_Login_Cadastro}
+    [X] Integração com PostgreSQL {#1_Home_Login_Cadastro}
+    [X] Tela de Usuarios {#1.1_Tela_Usuarios}
+        - Inicial
+        - Playlist
+        - Historico
+    [X] Tela de Adm {#1.2_Tela_Adm}
+        - Inicio
+        - Cadastro Artista
+        - Cadastrro / Excluir Musicas
+        - Consulta usuarios
+    [ ] Cadastro de artistas {#2_Cadastro_Artista}
+        - não tenha nomes repetidos
+        - cadastrar no banco de dados
+        - Aparecer nas listas
+    [ ] Cadastro de musicas {#2.1_Cadastro_Musica}
+        - Cadastrar musicas no banco de dados
+        - aparecer nas listas de musicas
+    [ ] Excluir musicas {#2.1_Cadastro_Musica}
+        - Excluir musica no banco de dados
+        - Atualizar as tabelas
+    Fim da parte basica.
+    *Partes de Usuarios*
+    [ ] Buscar musicas pelo nome, artista ou genero {#3_Buscador}
+    [ ] Listar informações das musicas buscada {#3.1_Informacoes}
+    [ ] Curtir e descurtir musicas {#3.2_Status}
+    [ ] Gerenciar Playlist {#3.3_Gerenciador_Playlists}
+        - Criar um Playlist
+        - excluir uma playlist
+        - Adicionar musicas na playlist
+        - Remover musicas da playlist
+        - Editar nome da playlist
+    [ ] Visualizar historico {#3.4_Visualizar_Historico}
+        - Forma armazenar um historico de pesquisa
+        - ultimas 10 musicas buscadas
+        - lista de musicas curtidas
+        - lista de musicas descurtidas
+    [ ] Ajustes finais {#3.9_Ajustes_Usuarios}
+    fim da parte de usuarios
+    *Parte de ADM*
+    [ ] Login na parte de Admin {#4_Login_Admin}
+        - Ajustar o login do admin (Akira faz isso)
+    [ ] Consultar usuarios {#4.1_Consulta_Usuario}
+    [ ] Visualizar estatisticas do sistema {#4.2_Estatisticas}
+        • Top 5 músicas mais curtidas pelos usuários
+        • Top 5 músicas mais descurtidas pelos usuários
+        • Total de usuários
+        • Total de músicas
+    fim da parte de Adm
+
+    [ ] Ajustes Finais do Spotifei
+    termino: 
