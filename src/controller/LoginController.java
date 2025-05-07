@@ -4,6 +4,7 @@
  */
 package controller;
 
+import view.conta.TelaLogin;
 import java.awt.event.*;
 import view.*;
 import dao.*;

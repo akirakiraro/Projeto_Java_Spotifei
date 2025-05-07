@@ -4,6 +4,7 @@
  */
 package controller;
 
+import view.conta.TelaCadastro;
 import dao.UsuarioDAO;
 import java.awt.event.*;
 import view.*;

@@ -1,8 +1,4 @@
-/Spotifei/nbproject/private/
-/Spotifei/build/
-/Spotifei/dist/
-/Spotifei/nbproject/private/
-/Spotifei/*.class
 /build/
+/dist/
 /nbproject/private
-nbproject/private/private.xml
+nbproject/private

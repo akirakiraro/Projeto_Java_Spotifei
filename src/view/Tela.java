@@ -1,5 +1,12 @@
 package view;
 
+import view.Adm.TelaAdmInicial;
+import view.conta.TelaCadastro;
+import view.conta.TelaLogin;
+import view.conta.TelaHome;
+import view.usuario.TelaPlaylist;
+import view.usuario.TelaHistorico;
+import view.usuario.TelaUsuarioInicial;
 import java.awt.CardLayout;
 import javax.swing.*;
 

@@ -1,5 +1,6 @@
 package controller;
 
+import view.usuario.TelaHistorico;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.*;
