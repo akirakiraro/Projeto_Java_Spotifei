@@ -1,6 +1,13 @@
+import controller.conta.HomeController;
+import controller.conta.CadastroController;
+import controller.conta.LoginController;
+import controller.usuario.PlaylistController;
+import controller.usuario.HistoricoController;
+import controller.usuario.UsuarioController;
+import controller.adm.AdmController;
+import controller.adm.ArtistaController;
 import model.*;
 import view.*;
-import controller.*;
 import dao.*;
 
 
@@ -29,6 +36,7 @@ public class Main {
         new PlaylistController(tela, tela.getTelaPlaylist());
         new HistoricoController(tela, tela.getTelaHistorico());
         new AdmController(tela, tela.getTelaAdmInicial());
+        new ArtistaController(tela, tela.getTelaCadastroArtista());
     }
     
 }

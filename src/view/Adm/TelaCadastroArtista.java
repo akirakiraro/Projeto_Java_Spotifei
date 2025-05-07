@@ -4,6 +4,9 @@
  */
 package view.Adm;
 
+import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Akira
@@ -15,8 +18,35 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
      */
     public TelaCadastroArtista() {
         initComponents();
+        
+        // Incializa a lista de Artistas
+        DefaultListModel<String> modeloPrincipal = new DefaultListModel<>();
+        listaArtista.setModel(modeloPrincipal);
+        
     }
-
+    public void setController(ActionListener controller) {
+        btnVoltar.setActionCommand("Voltar");
+        btnVoltar.addActionListener(controller);
+        btnCadastrar.setActionCommand("Cadastrar");
+        btnCadastrar.addActionListener(controller);
+    }
+    
+    public void limparLista(){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaArtista.getModel();
+        lista.clear();
+    }
+    
+    public String getCampoNome() {
+        return campoNome.getText();
+    }
+    
+    public void addListaArtista(String artista){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaArtista.getModel();
+        lista.addElement(artista);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,7 +70,7 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
         txtCadastro.setText("Cadastro");
 
         listaArtista.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "a", "s", "d", " " };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -68,17 +98,16 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
                     .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
-                            .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnVoltar)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE))
+                                .addComponent(txtCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -88,7 +117,7 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -98,7 +127,7 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCadastrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnVoltar)))
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

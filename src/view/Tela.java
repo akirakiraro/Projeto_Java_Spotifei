@@ -1,11 +1,14 @@
 package view;
 
 import view.Adm.TelaAdmInicial;
+import view.Adm.TelaCadastroArtista;
+import view.Adm.TelaCadastroExcluirMusica;
+import view.Adm.TelaConsultaUsuarios;
 import view.conta.TelaCadastro;
-import view.conta.TelaLogin;
 import view.conta.TelaHome;
-import view.usuario.TelaPlaylist;
+import view.conta.TelaLogin;
 import view.usuario.TelaHistorico;
+import view.usuario.TelaPlaylist;
 import view.usuario.TelaUsuarioInicial;
 import java.awt.CardLayout;
 import javax.swing.*;
@@ -22,6 +25,7 @@ public class Tela extends javax.swing.JFrame {
     private TelaHistorico telaHistorico;
     private TelaPlaylist telaPlaylist;
     private TelaAdmInicial telaAdmInicial;
+    private TelaCadastroArtista telaCadastroArtista;
     
     public Tela() {
         
@@ -35,6 +39,7 @@ public class Tela extends javax.swing.JFrame {
         telaHistorico = new TelaHistorico();
         telaPlaylist = new TelaPlaylist();
         telaAdmInicial = new TelaAdmInicial();
+        telaCadastroArtista = new TelaCadastroArtista();
 
         painelPrincipal.add(telaHome, "home");
         painelPrincipal.add(telaLogin, "login");
@@ -43,6 +48,7 @@ public class Tela extends javax.swing.JFrame {
         painelPrincipal.add(telaHistorico, "historico");
         painelPrincipal.add(telaPlaylist, "playlist");
         painelPrincipal.add(telaAdmInicial, "adm Inicio");
+        painelPrincipal.add(telaCadastroArtista, "cadastro Artista");
         
         add(painelPrincipal);
         mostrarTela("home");
@@ -83,6 +89,9 @@ public class Tela extends javax.swing.JFrame {
     }
     public TelaAdmInicial getTelaAdmInicial() {
         return telaAdmInicial;
+    }
+    public TelaCadastroArtista getTelaCadastroArtista() {
+        return telaCadastroArtista;
     }
     
     /**

@@ -11,14 +11,17 @@ public class Conexao {
         
         // nome do seu banco
         // (Akira) Deixei o meu como: "jdbc:postgresql://localhost:4352/SpotiFEI"
+        // na Fei o banco de dados que eu deixo é: "jdbc:postgresql://localhost:5432/SpotiFEI"
         // seu usuário PostgreSQL
         // (Akira) Deixei o meu como: "postgres"
+        // (FEI) Deixei o meu como: "postgres"
         // sua senha PostgreSQL
         // (Akira) Deixei o meu como: "4352"
+        // (FEI) Deixei o meu como: "fei"
         
-        String url = "jdbc:postgresql://localhost:5432/SpotiFEI";
+        String url = "jdbc:postgresql://localhost:4352/SpotiFEI";
         String usuario = "postgres";
-        String senha = "fei";
+        String senha = "4352";
 
         try {
             SQL = DriverManager.getConnection(url, usuario, senha);

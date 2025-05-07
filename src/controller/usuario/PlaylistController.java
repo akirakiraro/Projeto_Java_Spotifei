@@ -1,6 +1,6 @@
-package controller;
+package controller.usuario;
 
-import view.usuario.TelaHistorico;
+import view.usuario.TelaPlaylist;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.*;
@@ -9,17 +9,17 @@ import view.*;
  *
  * @author Akira
  */
-public class HistoricoController implements ActionListener {
+public class PlaylistController implements ActionListener {
     
     private Tela telaPrincipal;
-    private TelaHistorico telaHistorico;
+    private TelaPlaylist telaPlaylist;
     
-    public HistoricoController(Tela telaPrincipal, TelaHistorico telaHistorico) {
+    public PlaylistController(Tela telaPrincipal, TelaPlaylist telaPlaylist) {
         this.telaPrincipal = telaPrincipal;
-        this.telaHistorico = telaHistorico;
+        this.telaPlaylist = telaPlaylist;
 
         // conecta eventos
-        this.telaHistorico.setController(this);
+        this.telaPlaylist.setController(this);
     }
     
     @Override
@@ -27,8 +27,14 @@ public class HistoricoController implements ActionListener {
         String comando = e.getActionCommand();
         
         switch (comando) {
+            case "Criar Playlist":
+                break;
             case "Voltar":
                 telaPrincipal.mostrarTela("usuario Inicio");
+                break;
+            case "Renomear":
+                break;
+            case "Excluir":
                 break;
         }
     }

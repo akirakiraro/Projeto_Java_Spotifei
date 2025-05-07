@@ -1,4 +1,4 @@
-package controller;
+package controller.usuario;
 
 import view.usuario.TelaUsuarioInicial;
 import java.awt.event.ActionEvent;

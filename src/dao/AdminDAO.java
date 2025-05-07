@@ -16,14 +16,13 @@ public class AdminDAO {
     // Nome:  "Admin"
     // Senha: "Admin"
     public static void AddAdmin(){
-        String verificarSql = "SELECT * FROM administrador WHERE id_administrador = ?";
-        String sqlPessoa = "INSERT INTO pessoa (id, nome, email, senha) VALUES (?, ?, ?, ?)";
-        String sqlAdministrador = "INSERT INTO administrador (id_administrador) VALUES (?)";
+        String verificarSql = "SELECT * FROM administrador WHERE nome = ?";
+        String sqlAdministrador = "INSERT INTO administrador (nome, senha) VALUES (?, ?)";
         
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmtVerificar = conn.prepareStatement(verificarSql)) {
             
-            stmtVerificar.setInt(1, 1);
+            stmtVerificar.setString(1, "Admin");
             ResultSet rs = stmtVerificar.executeQuery();
             
             if (rs.next()) {
@@ -31,19 +30,11 @@ public class AdminDAO {
                 return;
             }
             
-            // Insere pessoa na tabela
-            try (PreparedStatement stmt1 = conn.prepareStatement(sqlPessoa)) {
-                stmt1.setInt(1, 1);
-                stmt1.setString(2, "Admin");
-                stmt1.setString(3, "Admin@spotifei.com");
-                stmt1.setString(4, "Admin");
-                stmt1.executeUpdate();
-            }
-            
-            // Insere na tabela de Admin
-            try (PreparedStatement stmt2 = conn.prepareStatement(sqlAdministrador)){
-                stmt2.setInt(1, 1);
-                stmt2.executeUpdate();
+            // Insere o Admin na tabela de administrador
+            try (PreparedStatement stmtAdmin = conn.prepareStatement(sqlAdministrador)) {
+                stmtAdmin.setString(1, "Admin");
+                stmtAdmin.setString(2, "Admin");
+                stmtAdmin.executeUpdate();
             }
             
             System.out.println("Admin Adicionado!");
@@ -55,7 +46,7 @@ public class AdminDAO {
     
     // Funcao para validar o login do usuario
     public boolean validarLoginAdmin(String nome, String senha){
-        String sql = "SELECT p.id FROM pessoa p " + "JOIN administrador u ON p.id = u.id_administrador " + "WHERE p.nome = ? AND p.senha = ?";
+        String sql = "SELECT * FROM administrador WHERE nome = ? AND senha = ?";
 
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -67,11 +58,11 @@ public class AdminDAO {
             
             if (rs.next()) {
                 // Usuario valido
-                System.out.println("Validacao do admin valida!");
+                System.out.println("Login do admin valida!");
                 return true;
             } else {
                 // Usuario ou senha invalido
-                System.out.println("Validacao do admin invalida!");
+                System.out.println("Login do admin invalida!");
                 return false;
             }
             
