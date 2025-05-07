@@ -3,6 +3,8 @@ SPOTIFEI
 
 Data entrega: 22/05/2025
 
+Vai criando as branchs conforme o necessario.
+
 Concluido:
 
     [X] Organização dos arquivos {#0_Inicio}
