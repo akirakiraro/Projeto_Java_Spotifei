@@ -2,27 +2,26 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controller;
+package controller.adm;
 
-import view.conta.TelaHome;
+import view.Adm.TelaAdmInicial;
 import java.awt.event.*;
 import view.*;
 
 /**
  *
- * @author Akira
+ * @author unieryatate
  */
-public class HomeController implements ActionListener {
-    
+public class AdmController implements ActionListener{
     private Tela telaPrincipal;
-    private TelaHome telaHome;
+    private TelaAdmInicial telaAdmInicial;
     
-    public HomeController(Tela telaPrincipal, TelaHome telaHome) {
+    public AdmController(Tela telaPrincipal, TelaAdmInicial telaAdmInicial) {
         this.telaPrincipal = telaPrincipal;
-        this.telaHome = telaHome;
+        this.telaAdmInicial = telaAdmInicial;
 
         // conecta eventos
-        this.telaHome.setController(this);
+        this.telaAdmInicial.setController(this);
     }
 
     @Override
@@ -30,17 +29,12 @@ public class HomeController implements ActionListener {
         String comando = e.getActionCommand();
 
         switch (comando) {
-            case "Login":
+            case "Cadastro Artista":
                 telaPrincipal.mostrarTela("login");
-                break;
-            case "Cadastro":
-                telaPrincipal.mostrarTela("cadastro");
                 break;
             case "Sair":
                 System.exit(0);
                 break;
         }
     }
-    
-    
 }

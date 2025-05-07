@@ -4,6 +4,9 @@
  */
 package view.Adm;
 
+import java.awt.event.ActionListener;
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Akira
@@ -15,8 +18,26 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
      */
     public TelaCadastroArtista() {
         initComponents();
+        
+        // Incializa a lista de Artistas
+        DefaultListModel<String> modeloPrincipal = new DefaultListModel<>();
+        listaArtista.setModel(modeloPrincipal);
+        
+        limparLista();
     }
-
+    public void setController(ActionListener controller) {
+        btnVoltar.setActionCommand("Voltar");
+        btnVoltar.addActionListener(controller);
+        btnCadastrar.setActionCommand("Cadastrar");
+        btnCadastrar.addActionListener(controller);
+    }
+    
+    public void limparLista(){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaArtista.getModel();
+        lista.clear();
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -72,7 +93,7 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
+                                .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE))
                             .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnVoltar)
