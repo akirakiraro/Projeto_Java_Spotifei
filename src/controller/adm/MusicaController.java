@@ -1,11 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller.adm;
 
+import dao.ArtistaDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 import view.Adm.TelaCadastroExcluirMusica;
 import view.Tela;
 
@@ -24,6 +22,8 @@ public class MusicaController implements ActionListener{
         // conecta eventos
         this.telaCadastroExcluirMusica.setController(this);
         
+        listarArtistasEsquerda();
+        
     }
 
     @Override
@@ -39,4 +39,13 @@ public class MusicaController implements ActionListener{
                 break;
         }
     }
+    
+    public void listarArtistasEsquerda(){
+        List<String> listaArtistas = ArtistaDAO.getArtistas();
+        
+        for (String nomeArtista : listaArtistas){
+            telaCadastroExcluirMusica.addArtistaComboBoxEsquerda(nomeArtista);
+        }
+    }
+    
 }

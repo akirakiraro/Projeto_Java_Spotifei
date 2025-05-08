@@ -4,7 +4,11 @@
  */
 package view.Adm;
 
+import dao.ArtistaDAO;
 import java.awt.event.ActionListener;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 
 /**
  *
@@ -17,6 +21,10 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
      */
     public TelaCadastroExcluirMusica() {
         initComponents();
+        
+        comboArtistaEsquerda.removeAllItems();
+        
+        
     }
     
     public void setController(ActionListener controller) {
@@ -30,6 +38,26 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
         btnEditar.addActionListener(controller);
     }
 
+    public void addArtistaComboBoxEsquerda(String nome) {
+        comboArtistaEsquerda.addItem(nome);
+    }
+    
+    public String getCampoNomeMusicaEsquerda() {
+        return campoNomeEsquerda.getText();
+    }
+    public String getCampoNomeMusicaDireita() {
+        return campoNomeDireita.getText();
+    }
+    public String getCampoDuracaoMusicaEsquerda() {
+        return campoDuracaoEsquerda.getText();
+    }
+    public String getCampoDuracaoMusicaDireita() {
+        return campoDuracaoDireita.getText();
+    }
+    
+    
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -46,14 +74,14 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
         listaMusicas = new javax.swing.JList<>();
         btnVoltar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        campoAddNome = new javax.swing.JTextField();
+        campoNomeEsquerda = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        campoDuracao = new javax.swing.JTextField();
-        comboArtista = new javax.swing.JComboBox<>();
+        campoDuracaoEsquerda = new javax.swing.JTextField();
+        comboArtistaEsquerda = new javax.swing.JComboBox<>();
         btnCadastrar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        campoNome = new javax.swing.JTextField();
+        campoNomeDireita = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         campoDuracaoDireita = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -79,10 +107,10 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
 
         jLabel3.setText("Nome");
 
-        campoAddNome.setText("jTextField1");
-        campoAddNome.addActionListener(new java.awt.event.ActionListener() {
+        campoNomeEsquerda.setText("nome da musica");
+        campoNomeEsquerda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoAddNomeActionPerformed(evt);
+                campoNomeEsquerdaActionPerformed(evt);
             }
         });
 
@@ -90,19 +118,15 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
 
         jLabel5.setText("Artista");
 
-        campoDuracao.setText("jTextField1");
+        campoDuracaoEsquerda.setText("duração");
 
-        comboArtista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboArtistaEsquerda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         btnCadastrar.setText("Cadastrar");
 
         jLabel6.setText("Editar Musicas");
 
-        campoNome.setText("jTextField3");
-
         jLabel7.setText("Duração");
-
-        campoDuracaoDireita.setText("jTextField4");
 
         jLabel8.setText("Artista");
 
@@ -129,9 +153,9 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoAddNome)
-                            .addComponent(campoDuracao)
-                            .addComponent(comboArtista, 0, 218, Short.MAX_VALUE)))
+                            .addComponent(campoNomeEsquerda)
+                            .addComponent(campoDuracaoEsquerda)
+                            .addComponent(comboArtistaEsquerda, 0, 218, Short.MAX_VALUE)))
                     .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -154,7 +178,7 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
                             .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(campoDuracaoDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(campoNome, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(campoNomeDireita, javax.swing.GroupLayout.Alignment.LEADING)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -163,29 +187,28 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(campoAddNome, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                            .addComponent(campoNomeEsquerda, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                            .addComponent(campoDuracao, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                            .addComponent(campoDuracaoEsquerda, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                            .addComponent(comboArtista))
+                            .addComponent(comboArtistaEsquerda))
                         .addGap(18, 18, 18)
                         .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(209, 209, 209))
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(campoNome, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoNomeDireita, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -225,9 +248,9 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoAddNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAddNomeActionPerformed
+    private void campoNomeEsquerdaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoNomeEsquerdaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoAddNomeActionPerformed
+    }//GEN-LAST:event_campoNomeEsquerdaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -235,12 +258,12 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextField campoAddNome;
-    private javax.swing.JTextField campoDuracao;
     private javax.swing.JTextField campoDuracaoDireita;
-    private javax.swing.JTextField campoNome;
-    private javax.swing.JComboBox<String> comboArtista;
+    private javax.swing.JTextField campoDuracaoEsquerda;
+    private javax.swing.JTextField campoNomeDireita;
+    private javax.swing.JTextField campoNomeEsquerda;
     private javax.swing.JComboBox<String> comboArtistaDireita;
+    private javax.swing.JComboBox<String> comboArtistaEsquerda;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

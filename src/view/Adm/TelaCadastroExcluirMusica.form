@@ -65,9 +65,9 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="campoAddNome" alignment="0" max="32767" attributes="0"/>
-                              <Component id="campoDuracao" max="32767" attributes="0"/>
-                              <Component id="comboArtista" pref="218" max="32767" attributes="0"/>
+                              <Component id="campoNomeEsquerda" alignment="0" max="32767" attributes="0"/>
+                              <Component id="campoDuracaoEsquerda" max="32767" attributes="0"/>
+                              <Component id="comboArtistaEsquerda" pref="218" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="btnCadastrar" max="32767" attributes="0"/>
@@ -97,7 +97,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="campoDuracaoDireita" min="-2" pref="132" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="campoNome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="campoNomeDireita" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -110,27 +110,25 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                       <Component id="jLabel6" pref="50" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel2" pref="50" max="32767" attributes="0"/>
-                          <Component id="jLabel9" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="jLabel2" alignment="0" pref="50" max="32767" attributes="0"/>
+                      <Component id="jLabel9" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel3" max="32767" attributes="0"/>
-                              <Component id="campoAddNome" pref="35" max="32767" attributes="0"/>
+                              <Component id="campoNomeEsquerda" pref="35" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel4" alignment="3" pref="35" max="32767" attributes="0"/>
-                              <Component id="campoDuracao" alignment="3" pref="35" max="32767" attributes="0"/>
+                              <Component id="campoDuracaoEsquerda" alignment="3" pref="35" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel5" pref="35" max="32767" attributes="0"/>
-                              <Component id="comboArtista" max="32767" attributes="0"/>
+                              <Component id="comboArtistaEsquerda" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnCadastrar" min="-2" pref="50" max="-2" attributes="0"/>
@@ -138,7 +136,7 @@
                       </Group>
                       <Component id="jScrollPane1" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="campoNome" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="campoNomeDireita" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel7" max="32767" attributes="0"/>
@@ -203,12 +201,12 @@
             <Property name="text" type="java.lang.String" value="Nome"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoAddNome">
+        <Component class="javax.swing.JTextField" name="campoNomeEsquerda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
+            <Property name="text" type="java.lang.String" value="nome da musica"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoAddNomeActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoNomeEsquerdaActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel4">
@@ -221,12 +219,12 @@
             <Property name="text" type="java.lang.String" value="Artista"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoDuracao">
+        <Component class="javax.swing.JTextField" name="campoDuracaoEsquerda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
+            <Property name="text" type="java.lang.String" value="dura&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="comboArtista">
+        <Component class="javax.swing.JComboBox" name="comboArtistaEsquerda">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -251,10 +249,7 @@
             <Property name="text" type="java.lang.String" value="Editar Musicas"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="campoNome">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField3"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="campoNomeDireita">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
@@ -262,9 +257,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="campoDuracaoDireita">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField4"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
