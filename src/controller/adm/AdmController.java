@@ -32,6 +32,9 @@ public class AdmController implements ActionListener{
             case "Cadastro Artista":
                 telaPrincipal.mostrarTela("cadastro Artista");
                 break;
+            case "Cadastro Excluir Musica":
+                telaPrincipal.mostrarTela("cadastro Excluir Musica");
+                break;
             case "Sair":
                 System.exit(0);
                 break;

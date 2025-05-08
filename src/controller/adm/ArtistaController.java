@@ -6,7 +6,6 @@ package controller.adm;
 
 import dao.ArtistaDAO;
 import java.awt.event.*;
-import java.util.ArrayList;
 import java.util.List;
 import view.Adm.TelaCadastroArtista;
 import view.Tela;
