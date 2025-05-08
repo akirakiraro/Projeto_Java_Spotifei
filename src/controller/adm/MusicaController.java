@@ -1,9 +1,11 @@
 package controller.adm;
 
 import dao.ArtistaDAO;
+import dao.MusicaDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import model.Musica;
 import view.Adm.TelaCadastroExcluirMusica;
 import view.Tela;
 
@@ -32,7 +34,10 @@ public class MusicaController implements ActionListener{
 
         switch (comando) {
             case "Cadastrar":
+                Musica musica = new Musica(telaCadastroExcluirMusica.getCampoNomeMusicaEsquerda(),
+                                           telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
                 
+                MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");

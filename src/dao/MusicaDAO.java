@@ -15,32 +15,39 @@ import model.Musica;
  * @author Akira
  */
 public class MusicaDAO {
-    public static boolean adicionarMusica(Musica musica) {
-        String verificarSql = "SELECT * FROM artista WHERE nome = ?";
-        String sqlUsuario = "INSERT INTO artista (nome) VALUES (?)";
+    public static boolean adicionarMusica(Musica musica, String nomeArtista) {
+        String sqlBuscarIdArtista = "SELECT id_artista FROM artista WHERE nome = ?";
+        String sqlUsuario = "INSERT INTO musica (titulo, duracao, status, id_artista) VALUES (?, ?, ?, ?)";
         
         try (Connection conn = Conexao.conectar();
-             PreparedStatement stmtVerificacao = conn.prepareStatement(verificarSql)) {
+             PreparedStatement stmtBuscaNomeArtista = conn.prepareStatement(sqlBuscarIdArtista)) {
             
                 // Verifica se tem algum nome igual no banco de dados
-                stmtVerificacao.setString(1, artista.getNome());
-                ResultSet rs = stmtVerificacao.executeQuery();
+                stmtBuscaNomeArtista.setString(1, nomeArtista);
+                ResultSet rs = stmtBuscaNomeArtista.executeQuery();
 
                 if (rs.next()) {
-                    System.out.println("Nome ja existe.");
+                    int idArtista = rs.getInt("id_artista");
+                    // coloca aki as informacoes para as musicas
+                    try (PreparedStatement stmt = conn.prepareStatement(sqlUsuario)) {
+                        stmt.setString(1, musica.getTitulo());
+                        stmt.setInt(2, musica.getDuracao());
+                        stmt.setInt(3, musica.getStatus());
+                        stmt.setInt(4, idArtista);
+                        stmt.executeUpdate();
+                    }
+
+                    System.out.println("Musica cadastrado com sucesso!");
+                    return true;
+                } else {
+                    System.out.println("Artista não encontrado: " + nomeArtista);
                     return false;
                 }
-                try (PreparedStatement stmt = conn.prepareStatement(sqlUsuario)) {
-                    stmt.setString(1, artista.getNome());
-                    stmt.executeUpdate();
-                }
                 
-                System.out.println("Artista cadastrado com sucesso!");
                 
         } catch (SQLException e) {
             System.out.println("Erro ao adicionar a musica: " + e.getMessage());
             return false;
         }
-        return true;
     }
 }

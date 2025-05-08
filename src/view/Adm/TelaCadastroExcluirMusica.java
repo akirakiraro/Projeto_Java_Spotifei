@@ -1,14 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view.Adm;
 
-import dao.ArtistaDAO;
 import java.awt.event.ActionListener;
-import java.util.List;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 
 /**
  *
@@ -48,11 +40,19 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
     public String getCampoNomeMusicaDireita() {
         return campoNomeDireita.getText();
     }
-    public String getCampoDuracaoMusicaEsquerda() {
-        return campoDuracaoEsquerda.getText();
+    public int getCampoDuracaoMusicaEsquerda() {
+        try {
+            return Integer.parseInt(campoDuracaoEsquerda.getText());
+        } catch (NumberFormatException e) {
+            System.out.println("Entrada nao contem apenas numeros.");
+            return -1;
+        }
     }
     public String getCampoDuracaoMusicaDireita() {
         return campoDuracaoDireita.getText();
+    }
+    public String getComboBoxArtistaEsquerda() {
+        return (String) comboArtistaEsquerda.getSelectedItem();
     }
     
     
