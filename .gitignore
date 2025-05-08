@@ -6,3 +6,4 @@ dist/
 nbproject/private
 build/built-jar.properties
 /build
+/nbproject/private
