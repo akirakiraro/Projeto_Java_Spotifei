@@ -21,7 +21,7 @@ Concluido:
         - Cadastro Artista
         - Cadastrro / Excluir Musicas
         - Consulta usuarios
-    [ ] Cadastro de artistas {#2_Cadastro_Artista}
+    [X] Cadastro de artistas {#2_Cadastro_Artista}
         - não tenha nomes repetidos
         - cadastrar no banco de dados
         - Aparecer nas listas
