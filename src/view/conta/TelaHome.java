@@ -46,7 +46,8 @@ public class TelaHome extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridLayout(4, 1));
 
-        jLabel1.setText("SPOTIFEI");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setText("                                                                 SPOTIFEI");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
