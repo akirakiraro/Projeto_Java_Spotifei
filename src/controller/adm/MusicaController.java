@@ -5,6 +5,8 @@ import dao.MusicaDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 import model.Musica;
 import view.Adm.TelaCadastroExcluirMusica;
 import view.Tela;
@@ -24,8 +26,20 @@ public class MusicaController implements ActionListener{
         // conecta eventos
         this.telaCadastroExcluirMusica.setController(this);
         
-        listarArtistasEsquerda();
-        
+        // Roda caso a tela seja chamada
+        this.telaCadastroExcluirMusica.addAncestorListener(new AncestorListener() {
+            @Override
+            public void ancestorAdded(AncestorEvent evt) {
+                System.out.println("\nTela de Cadastro.");
+                listarArtistasEsquerda();
+                listarMusicas();
+            }
+
+            @Override
+            public void ancestorMoved(AncestorEvent evt) {} // roda quando a tela eh movida
+            @Override
+            public void ancestorRemoved(AncestorEvent evt) {} // roda quando a tela eh removida
+        });
     }
 
     @Override
@@ -38,6 +52,7 @@ public class MusicaController implements ActionListener{
                                            telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
                 
                 MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
+                listarMusicas();
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");
@@ -45,7 +60,11 @@ public class MusicaController implements ActionListener{
         }
     }
     
+    
+    
+    
     public void listarArtistasEsquerda(){
+        telaCadastroExcluirMusica.limparArtistaComboBoxEsquerda();
         List<String> listaArtistas = ArtistaDAO.getArtistas();
         
         for (String nomeArtista : listaArtistas){
@@ -53,4 +72,16 @@ public class MusicaController implements ActionListener{
         }
     }
     
+    public void listarMusicas(){
+        telaCadastroExcluirMusica.limparLista();
+        List<Musica> listaMusicas = MusicaDAO.getMusicas();
+        
+        for (Musica musica : listaMusicas){
+            int minutos = musica.getDuracao() / 60;
+            int segundos = musica.getDuracao() % 60;
+            
+            String strFormatada = String.format("%-20s | %02d:%02d | %-20s", musica.getTitulo(), minutos, segundos, musica.getArtista());
+            telaCadastroExcluirMusica.addListaArtista(strFormatada);
+        }
+    }
 }

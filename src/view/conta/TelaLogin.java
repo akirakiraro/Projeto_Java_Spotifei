@@ -24,6 +24,8 @@ public class TelaLogin extends javax.swing.JPanel {
         btnLogar.addActionListener(controller);
         btnCadastro.addActionListener(controller);
         btnVoltar.addActionListener(controller);
+        
+        getRootPane().setDefaultButton(btnLogar);
     }
     
     public String getCampoUsuario() {
@@ -61,6 +63,8 @@ public class TelaLogin extends javax.swing.JPanel {
 
         txtSenha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtSenha.setText("Senha: ");
+
+        loginUsuario.setText("Admin");
 
         btnVoltar.setText("Voltar");
 
