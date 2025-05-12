@@ -1,6 +1,7 @@
 package view.Adm;
 
 import java.awt.event.ActionListener;
+import javax.swing.event.AncestorEvent;
 
 /**
  *
@@ -14,9 +15,6 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
     public TelaCadastroExcluirMusica() {
         initComponents();
         
-        comboArtistaEsquerda.removeAllItems();
-        
-        
     }
     
     public void setController(ActionListener controller) {
@@ -29,7 +27,11 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
         btnEditar.setActionCommand("Editar");
         btnEditar.addActionListener(controller);
     }
-
+    
+    public void limparArtistaComboBoxEsquerda() {
+        comboArtistaEsquerda.removeAllItems();
+    }
+    
     public void addArtistaComboBoxEsquerda(String nome) {
         comboArtistaEsquerda.addItem(nome);
     }
