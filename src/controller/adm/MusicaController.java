@@ -54,6 +54,14 @@ public class MusicaController implements ActionListener{
                 MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
                 listarMusicas();
                 break;
+            case "Excluir":
+                if (telaCadastroExcluirMusica.getMusicaSelecionada() == -1){
+                    break;
+                } else {
+                    MusicaDAO.excluirMusica(telaCadastroExcluirMusica.getMusicaSelecionada());
+                    listarMusicas();
+                    break;
+                }
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");
                 break;
@@ -74,6 +82,8 @@ public class MusicaController implements ActionListener{
     
     public void listarMusicas(){
         telaCadastroExcluirMusica.limparLista();
+        String strInicio = String.format("%-20s | %5s | %-20s", "Nome da Musica", "Tempo", "Artista");
+        telaCadastroExcluirMusica.addListaArtista(strInicio);
         List<Musica> listaMusicas = MusicaDAO.getMusicas();
         
         for (Musica musica : listaMusicas){
