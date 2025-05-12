@@ -1,9 +1,30 @@
+# Ignora arquivos de build
 /build/
-build/
-dist/
 /dist/
-/nbproject/private
-nbproject/private
-build/built-jar.properties
-/build
-/nbproject/private
+
+# Ignora pastas temporárias do NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# Ignora arquivos de log e temporários
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignora arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignora arquivos de IDEs
+*.iml
+.idea/
+.vscode/
+
+# Ignora arquivos compilados Java
+*.class
+*.jar
+*.war
+*.ear
