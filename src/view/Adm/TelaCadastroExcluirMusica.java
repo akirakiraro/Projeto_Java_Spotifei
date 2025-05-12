@@ -49,7 +49,7 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
         try {
             return Integer.parseInt(campoDuracaoEsquerda.getText());
         } catch (NumberFormatException e) {
-            System.out.println("Entrada nao contem apenas numeros.");
+            System.out.println("\nEntrada nao contem apenas numeros.");
             return -1;
         }
     }

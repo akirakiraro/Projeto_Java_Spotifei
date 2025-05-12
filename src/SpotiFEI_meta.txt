@@ -31,7 +31,7 @@ Concluido:
     [X] Excluir musicas {#2.1_Cadastro_Musica}
         - Excluir musica no banco de dados
         - Atualizar as tabelas
-    [ ] Ajustes ADM {#2.2_Ajustes_Inicial}
+    [ ] Ajustes ADM {#2.2_Ajuste_Inicial}
     Fim da parte basica.
     *Partes de Usuarios*
     [ ] Buscar musicas pelo nome, artista ou genero {#3_Buscador}

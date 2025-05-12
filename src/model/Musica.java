@@ -14,7 +14,7 @@ public class Musica {
     private int status;
     private String artista;
     private int IDartista;
-
+    
     public Musica(String titulo, int duracao) {
         this.titulo = titulo;
         this.duracao = duracao;

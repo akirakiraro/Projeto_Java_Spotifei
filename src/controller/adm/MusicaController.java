@@ -30,7 +30,7 @@ public class MusicaController implements ActionListener{
         this.telaCadastroExcluirMusica.addAncestorListener(new AncestorListener() {
             @Override
             public void ancestorAdded(AncestorEvent evt) {
-                System.out.println("\nTela de Cadastro.");
+                System.out.println("\nTela de Musica.");
                 listarArtistasEsquerda();
                 listarMusicas();
             }
@@ -48,12 +48,15 @@ public class MusicaController implements ActionListener{
 
         switch (comando) {
             case "Cadastrar":
-                Musica musica = new Musica(telaCadastroExcluirMusica.getCampoNomeMusicaEsquerda(),
-                                           telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
-                
-                MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
-                listarMusicas();
-                break;
+                Musica musica = new Musica(telaCadastroExcluirMusica.getCampoNomeMusicaEsquerda(), telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
+                if (musica.getDuracao() == -1) {
+                    System.out.println("\nDuracao errada!");
+                    break;
+                } else {
+                    MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
+                    listarMusicas();
+                    break;
+                }
             case "Excluir":
                 if (telaCadastroExcluirMusica.getMusicaSelecionada() == -1){
                     break;
@@ -67,9 +70,6 @@ public class MusicaController implements ActionListener{
                 break;
         }
     }
-    
-    
-    
     
     public void listarArtistasEsquerda(){
         telaCadastroExcluirMusica.limparArtistaComboBoxEsquerda();
