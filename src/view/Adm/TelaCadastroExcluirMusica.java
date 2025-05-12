@@ -67,11 +67,13 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.clear();
     }
-    
     public void addListaArtista(String musica){
         // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.addElement(musica);
+    }
+    public int getMusicaSelecionada() {
+        return listaMusicas.getSelectedIndex() - 1;
     }
     
     
