@@ -25,12 +25,13 @@ Concluido:
         - não tenha nomes repetidos
         - cadastrar no banco de dados
         - Aparecer nas listas
-    [ ] Cadastro de musicas {#2.1_Cadastro_Musica}
+    [X] Cadastro de musicas {#2.1_Cadastro_Musica}
         - Cadastrar musicas no banco de dados
         - aparecer nas listas de musicas
-    [ ] Excluir musicas {#2.1_Cadastro_Musica}
+    [X] Excluir musicas {#2.1_Cadastro_Musica}
         - Excluir musica no banco de dados
         - Atualizar as tabelas
+    [ ] Ajustes ADM {#2.2_Ajustes_Inicial}
     Fim da parte basica.
     *Partes de Usuarios*
     [ ] Buscar musicas pelo nome, artista ou genero {#3_Buscador}
