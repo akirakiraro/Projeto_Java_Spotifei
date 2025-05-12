@@ -53,7 +53,12 @@ public class ArtistaController implements ActionListener{
                 Artista artista = new Artista(telaCadastroArtista.getCampoNome());
                 if (ArtistaDAO.adicionar(artista) == true) {
                     telaCadastroArtista.addListaArtista(artista.getNome());
+                    listarArtistas();
                 }
+                break;
+            case "Excluir":
+                ArtistaDAO.excluirArtista(telaCadastroArtista.getArtistaSelecionada());
+                listarArtistas();
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");
@@ -62,6 +67,7 @@ public class ArtistaController implements ActionListener{
     }
     
     public void listarArtistas(){
+        telaCadastroArtista.limparLista();
         List<String> listaArtistas = ArtistaDAO.getArtistas();
         
         for (String nomeArtista : listaArtistas){
