@@ -93,6 +93,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="loginUsuario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Admin"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="loginSenha">
     </Component>

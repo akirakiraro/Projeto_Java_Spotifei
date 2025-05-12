@@ -12,11 +12,26 @@ public class Musica {
     private String titulo;
     private int duracao;
     private int status;
+    private String artista;
 
     public Musica(String titulo, int duracao) {
         this.titulo = titulo;
         this.duracao = duracao;
         this.status = 0;
+    }
+
+    public Musica(String titulo, int duracao, String artista) {
+        this.titulo = titulo;
+        this.duracao = duracao;
+        this.artista = artista;
+    }
+    
+    public String getArtista() {
+        return artista;
+    }
+
+    public void setArtista(String artista) {
+        this.artista = artista;
     }
     
     public String getTitulo() {

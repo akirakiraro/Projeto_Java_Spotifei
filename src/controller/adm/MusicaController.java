@@ -32,6 +32,7 @@ public class MusicaController implements ActionListener{
             public void ancestorAdded(AncestorEvent evt) {
                 System.out.println("\nTela de Cadastro.");
                 listarArtistasEsquerda();
+                listarMusicas();
             }
 
             @Override
@@ -51,6 +52,7 @@ public class MusicaController implements ActionListener{
                                            telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
                 
                 MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
+                listarMusicas();
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");
@@ -67,6 +69,19 @@ public class MusicaController implements ActionListener{
         
         for (String nomeArtista : listaArtistas){
             telaCadastroExcluirMusica.addArtistaComboBoxEsquerda(nomeArtista);
+        }
+    }
+    
+    public void listarMusicas(){
+        telaCadastroExcluirMusica.limparLista();
+        List<Musica> listaMusicas = MusicaDAO.getMusicas();
+        
+        for (Musica musica : listaMusicas){
+            int minutos = musica.getDuracao() / 60;
+            int segundos = musica.getDuracao() % 60;
+            
+            String strFormatada = String.format("%-20s | %02d:%02d | %-20s", musica.getTitulo(), minutos, segundos, musica.getArtista());
+            telaCadastroExcluirMusica.addListaArtista(strFormatada);
         }
     }
 }

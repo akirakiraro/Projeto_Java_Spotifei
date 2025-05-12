@@ -1,7 +1,7 @@
 package view.Adm;
 
 import java.awt.event.ActionListener;
-import javax.swing.event.AncestorEvent;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -14,6 +14,9 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
      */
     public TelaCadastroExcluirMusica() {
         initComponents();
+        
+        DefaultListModel<String> modeloPrincipal = new DefaultListModel<>();
+        listaMusicas.setModel(modeloPrincipal);
         
     }
     
@@ -58,6 +61,18 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
     }
     
     
+    // LISTA DE MUSICAS, LOCALIZADO NO MEIO
+    public void limparLista(){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
+        lista.clear();
+    }
+    
+    public void addListaArtista(String musica){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
+        lista.addElement(musica);
+    }
     
     
     /**
@@ -98,6 +113,7 @@ public class TelaCadastroExcluirMusica extends javax.swing.JPanel {
 
         jLabel2.setText("Cadastrar Musica");
 
+        listaMusicas.setFont(new java.awt.Font("Courier New", 0, 14)); // NOI18N
         listaMusicas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
