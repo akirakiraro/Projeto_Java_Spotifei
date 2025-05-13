@@ -10,6 +10,7 @@ import javax.swing.event.AncestorListener;
 import model.Musica;
 import view.Adm.TelaCadastroExcluirMusica;
 import view.Tela;
+import view.TelaErro;
 
 /**
  *
@@ -50,7 +51,9 @@ public class MusicaController implements ActionListener{
             case "Cadastrar":
                 Musica musica = new Musica(telaCadastroExcluirMusica.getCampoNomeMusicaEsquerda(), telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
                 if (musica.getDuracao() == -1) {
-                    System.out.println("\nDuracao errada!");
+                    TelaErro erro = new TelaErro();
+                    erro.setTexto("Duração da música inválida.");
+                    erro.setVisible(true);
                     break;
                 } else {
                     MusicaDAO.adicionarMusica(musica, telaCadastroExcluirMusica.getComboBoxArtistaEsquerda());
@@ -59,6 +62,9 @@ public class MusicaController implements ActionListener{
                 }
             case "Excluir":
                 if (telaCadastroExcluirMusica.getMusicaSelecionada() == -1){
+                    TelaErro erro = new TelaErro();
+                    erro.setTexto("Selecione uma Música.");
+                    erro.setVisible(true);
                     break;
                 } else {
                     MusicaDAO.excluirMusica(telaCadastroExcluirMusica.getMusicaSelecionada());
