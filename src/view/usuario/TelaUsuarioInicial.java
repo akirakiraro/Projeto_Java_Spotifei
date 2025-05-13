@@ -63,28 +63,35 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         btnVoltar.addActionListener(controller);   
     }
     
+    
+    // LISTA DE MUSICA
     public void limparListaMusicas(){
         // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.clear();
     }
-    
-    public void limparListaPlaylist(){
-        // Limpa a lista 
-        DefaultListModel<String> lista = (DefaultListModel<String>) listaPlaylist.getModel();
-        lista.clear();
-    }
-    
     public void addListaMusica(String musica){
         // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.addElement(musica);
     }
+    public int getMusicaSelecionada() {
+        return listaMusicas.getSelectedIndex() - 1;
+    }
     
+    // LISTA DE PLAYLIST
+    public void limparListaPlaylist(){
+        // Limpa a lista 
+        DefaultListModel<String> lista = (DefaultListModel<String>) listaPlaylist.getModel();
+        lista.clear();
+    }
     public void addListaPlaylist(String nome){
         // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaPlaylist.getModel();
         lista.addElement(nome);
+    }
+    public int getPlaylistSelecionada() {
+        return listaPlaylist.getSelectedIndex() - 1;
     }
     
     /**
@@ -189,7 +196,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         btnInicio.setBackground(new java.awt.Color(51, 51, 51));
         btnInicio.setFont(new java.awt.Font("Arial", 1, 32)); // NOI18N
         btnInicio.setForeground(new java.awt.Color(0, 204, 0));
-        btnInicio.setText("INICIO");
+        btnInicio.setText("MUSICAS");
 
         txtPlaylist1.setFont(new java.awt.Font("Arial", 0, 22)); // NOI18N
         txtPlaylist1.setForeground(new java.awt.Color(51, 204, 0));
@@ -252,6 +259,7 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         jpnPrincipal.setBackground(new java.awt.Color(102, 102, 102));
         jpnPrincipal.setFont(new java.awt.Font("Arial", 0, 24)); // NOI18N
 
+        listaMusicas.setFont(new java.awt.Font("Courier New", 0, 12)); // NOI18N
         listaMusicas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
