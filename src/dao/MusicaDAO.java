@@ -141,4 +141,40 @@ public class MusicaDAO {
         
         return musicas;
     }
+
+    public static List<Musica> buscarMusicas(String buscador) {
+        List<Musica> musicas = new ArrayList<>();
+        String sql = """
+            SELECT m.titulo, m.duracao, m.genero, a.nome AS artista
+            FROM musica m
+            JOIN artista a ON m.id_artista = a.id_artista
+            WHERE LOWER(m.titulo) LIKE ? OR LOWER(a.nome) LIKE ? OR LOWER(m.genero) LIKE ?
+        """;
+
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            String termo = "%" + buscador.toLowerCase() + "%";
+            stmt.setString(1, termo);
+            stmt.setString(2, termo);
+            stmt.setString(3, termo);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                String titulo = rs.getString("titulo");
+                int duracao = rs.getInt("duracao");
+                String artista = rs.getString("artista");
+                String genero = rs.getString("genero");
+
+                Musica musica = new Musica(titulo, duracao, artista, genero);
+                musicas.add(musica);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao buscar musicas: " + e.getMessage());
+        }
+
+        return musicas;
+    }
 }

@@ -7,6 +7,8 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import model.Musica;
 import view.*;
 
@@ -42,6 +44,17 @@ public class UsuarioController implements ActionListener {
             public void ancestorRemoved(AncestorEvent evt) {} // roda quando a tela eh removida
         });
         
+        telaUsuarioInicial.listenerBusca(new DocumentListener() {
+            public void insertUpdate(DocumentEvent e) {
+                listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
+            }
+            public void removeUpdate(DocumentEvent e) {
+                listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
+            }
+            public void changedUpdate(DocumentEvent e) {
+                listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
+            }
+        });
     }
     
     @Override
@@ -76,7 +89,7 @@ public class UsuarioController implements ActionListener {
         }
     }
  
-        public void listarMusicas(){
+    public void listarMusicas(){
         telaUsuarioInicial.limparListaMusicas();
         String strInicio = String.format("%-20s | %5s | %-15s | %-10s", "Nome da Música", "Tempo", "Artista", "Gênero");
         telaUsuarioInicial.addListaMusica(strInicio);
@@ -91,6 +104,19 @@ public class UsuarioController implements ActionListener {
         }
     }
     
-    
+    public void listarMusicasBuscada(String busca){
+        telaUsuarioInicial.limparListaMusicas();
+        String strInicio = String.format("%-20s | %5s | %-15s | %-10s", "Nome da Música", "Tempo", "Artista", "Gênero");
+        telaUsuarioInicial.addListaMusica(strInicio);
+        List<Musica> listaMusicas = MusicaDAO.buscarMusicas(busca);
+        
+        for (Musica musica : listaMusicas){
+            int minutos = musica.getDuracao() / 60;
+            int segundos = musica.getDuracao() % 60;
+            
+            String strFormatada = String.format("%-20s | %02d:%02d | %-15s | %-10s", musica.getTitulo(), minutos, segundos, musica.getArtista(), musica.getGenero());
+            telaUsuarioInicial.addListaMusica(strFormatada);
+        }
+    }
     
 }

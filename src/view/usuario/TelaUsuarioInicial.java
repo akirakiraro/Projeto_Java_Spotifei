@@ -6,6 +6,8 @@ package view.usuario;
 
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 /**
  *
@@ -63,6 +65,13 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         btnVoltar.addActionListener(controller);   
     }
     
+    // LISTENER DO CAMPO DE BUSCA DE MUSICA
+    public void listenerBusca (DocumentListener listener){
+        txtfieldPesquisa.getDocument().addDocumentListener(listener);
+    }
+    public String getCampoBuscador(){
+        return txtfieldPesquisa.getText();
+    }
     
     // LISTA DE MUSICA
     public void limparListaMusicas(){
