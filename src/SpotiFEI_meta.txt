@@ -34,7 +34,7 @@ Concluido:
     [X] Ajustes ADM {#2.2_Ajuste_Inicial}
     Fim da parte basica.
     *Partes de Usuarios*
-    [ ] Arrumar listas da tela de usuario {#3_Arrumar_Listas_Usuario}
+    [X] Arrumar listas da tela de usuario {#3_Arrumar_Listas_Usuario}
     [ ] Buscar musicas pelo nome, artista ou genero {#3.1_Buscador}
     [ ] Listar informações das musicas buscada {#3.2_Informacoes}
     [ ] Curtir e descurtir musicas {#3.3_Status}

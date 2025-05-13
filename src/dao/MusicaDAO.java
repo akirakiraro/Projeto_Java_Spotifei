@@ -10,8 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.Musica;
 
 /**
@@ -21,7 +19,7 @@ import model.Musica;
 public class MusicaDAO {
     public static boolean adicionarMusica(Musica musica, String nomeArtista) {
         String sqlBuscarIdArtista = "SELECT id_artista FROM artista WHERE nome = ?";
-        String sqlUsuario = "INSERT INTO musica (titulo, duracao, status, id_artista) VALUES (?, ?, ?, ?)";
+        String sqlUsuario = "INSERT INTO musica (titulo, duracao, status, id_artista, genero) VALUES (?, ?, ?, ?, ?)";
         
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmtBuscaNomeArtista = conn.prepareStatement(sqlBuscarIdArtista)) {
@@ -38,6 +36,7 @@ public class MusicaDAO {
                         stmt.setInt(2, musica.getDuracao());
                         stmt.setInt(3, musica.getStatus());
                         stmt.setInt(4, idArtista);
+                        stmt.setString(5, musica.getGenero());
                         stmt.executeUpdate();
                     }
 
@@ -94,7 +93,7 @@ public class MusicaDAO {
     
     public static List<Musica> getMusicas(){
         List<Musica> musicas = new ArrayList<>();
-        String sql = "SELECT m.titulo, m.duracao, a.nome AS artista " +
+        String sql = "SELECT m.titulo, m.duracao, m.genero, a.nome AS artista " +
                      "FROM musica m " +
                      "JOIN artista a ON m.id_artista = a.id_artista";
         
@@ -106,9 +105,10 @@ public class MusicaDAO {
                 String titulo = rs.getString("titulo");
                 int duracao = rs.getInt("duracao");
                 String artista = rs.getString("artista");
+                String genero = rs.getString("genero");
                 
                 // Adicionando a música à lista
-                musicas.add(new Musica(titulo, duracao, artista));
+                musicas.add(new Musica(titulo, duracao, artista, genero));
             }
 
         } catch (SQLException e) {

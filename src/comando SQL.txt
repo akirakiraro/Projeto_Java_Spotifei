@@ -3,7 +3,7 @@ CREATE TABLE usuario (
     id_usuario SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     email VARCHAR(255),
-    telefone VARCHAR(9),
+    telefone VARCHAR(11),
     senha VARCHAR(255) NOT NULL
 );
 
@@ -22,6 +22,7 @@ CREATE TABLE musica (
     id SERIAL PRIMARY KEY,
     titulo VARCHAR(255) NOT NULL,
     duracao INT, -- duração em segundos
+    genero VARCHAR(255) NOT NULL,
     status INT,
     id_artista INT NOT NULL,
     FOREIGN KEY (id_artista) REFERENCES artista(id_artista)
