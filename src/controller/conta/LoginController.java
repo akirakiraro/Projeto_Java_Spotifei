@@ -44,6 +44,9 @@ public class LoginController implements ActionListener{
                     break;
                 } else {
                     // login errado
+                    TelaErro erro = new TelaErro();
+                    erro.setTexto("Usuário ou senha errado.");
+                    erro.setVisible(true);
                     break;
                 }
             case "Cadastro":

@@ -28,6 +28,11 @@ public class Main {
         Tela tela = new Tela();
         tela.setVisible(true);
         
+//        // teste tela de erro
+//        TelaErro telaErro = new TelaErro();
+//        telaErro.setTexto("DSADSADASDADSADSAD");
+//        telaErro.setVisible(true);
+        
         // passa as views e conecta os controllers
         new HomeController(tela, tela.getTelaHome());
         new LoginController(tela, tela.getTelaLogin());
