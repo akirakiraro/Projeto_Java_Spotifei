@@ -289,29 +289,28 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane2" min="-2" pref="400" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtTituloMusica" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="btnAddMusicaPlaylist" alignment="1" max="32767" attributes="0"/>
+                      <Component id="combolistaPlaylist" alignment="1" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="txtGenero" alignment="0" pref="90" max="32767" attributes="0"/>
-                              <Component id="txtArtista" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="txtArtista" min="-2" pref="60" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtNomeArtista" max="32767" attributes="0"/>
-                              <Component id="txtNomeGenero" pref="281" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="txtNomeArtista" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="txtDuracao" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="txtTituloMusica" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="txtGenero" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtDuracaoMusica" max="32767" attributes="0"/>
+                          <Component id="txtNomeGenero" min="-2" pref="234" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="btnAddMusicaPlaylist" max="32767" attributes="0"/>
-                      <Component id="combolistaPlaylist" max="32767" attributes="0"/>
-                      <Component id="btnRemoverMusicaPlaylist" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="txtDuracao" pref="60" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtDuracaoMusica" min="-2" pref="234" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="btnRemoverMusicaPlaylist" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -326,14 +325,14 @@
                       <Group type="102" attributes="0">
                           <Component id="txtTituloMusica" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtArtista" pref="60" max="32767" attributes="0"/>
-                              <Component id="txtNomeArtista" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtNomeArtista" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="txtArtista" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtGenero" pref="60" max="32767" attributes="0"/>
-                              <Component id="txtNomeGenero" max="32767" attributes="0"/>
+                              <Component id="txtNomeGenero" pref="60" max="32767" attributes="0"/>
+                              <Component id="txtGenero" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">

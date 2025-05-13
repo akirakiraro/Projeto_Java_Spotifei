@@ -49,7 +49,9 @@ public class MusicaController implements ActionListener{
 
         switch (comando) {
             case "Cadastrar":
-                Musica musica = new Musica(telaCadastroExcluirMusica.getCampoNomeMusicaEsquerda(), telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda());
+                Musica musica = new Musica(telaCadastroExcluirMusica.getCampoNomeMusicaEsquerda(),
+                                           telaCadastroExcluirMusica.getCampoDuracaoMusicaEsquerda(),
+                                           telaCadastroExcluirMusica.getCampoGeneroEsquerda());
                 if (musica.getDuracao() == -1) {
                     TelaErro erro = new TelaErro();
                     erro.setTexto("Duração da música inválida.");
@@ -88,7 +90,7 @@ public class MusicaController implements ActionListener{
     
     public void listarMusicas(){
         telaCadastroExcluirMusica.limparLista();
-        String strInicio = String.format("%-20s | %5s | %-20s", "Nome da Musica", "Tempo", "Artista");
+        String strInicio = String.format("%-20s | %5s | %-15s | %-10s", "Nome da Música", "Tempo", "Artista", "Gênero");
         telaCadastroExcluirMusica.addListaArtista(strInicio);
         List<Musica> listaMusicas = MusicaDAO.getMusicas();
         
@@ -96,7 +98,7 @@ public class MusicaController implements ActionListener{
             int minutos = musica.getDuracao() / 60;
             int segundos = musica.getDuracao() % 60;
             
-            String strFormatada = String.format("%-20s | %02d:%02d | %-20s", musica.getTitulo(), minutos, segundos, musica.getArtista());
+            String strFormatada = String.format("%-20s | %02d:%02d | %-15s | %-10s", musica.getTitulo(), minutos, segundos, musica.getArtista(), musica.getGenero());
             telaCadastroExcluirMusica.addListaArtista(strFormatada);
         }
     }

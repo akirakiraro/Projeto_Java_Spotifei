@@ -14,17 +14,20 @@ public class Musica {
     private int status;
     private String artista;
     private int IDartista;
+    private String genero;
     
-    public Musica(String titulo, int duracao) {
+    public Musica(String titulo, int duracao, String genero) {
         this.titulo = titulo;
         this.duracao = duracao;
         this.status = 0;
+        this.genero = genero;
     }
 
-    public Musica(String titulo, int duracao, String artista) {
+    public Musica(String titulo, int duracao, String artista, String genero) {
         this.titulo = titulo;
         this.duracao = duracao;
         this.artista = artista;
+        this.genero = genero;        
     }
     public Musica(String titulo, int duracao, int IDartista) {
         this.titulo = titulo;
@@ -32,6 +35,13 @@ public class Musica {
         this.IDartista = IDartista;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
     public int getIDartista() {
         return IDartista;
     }
