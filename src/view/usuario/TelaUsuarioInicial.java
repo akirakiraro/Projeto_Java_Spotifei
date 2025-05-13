@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view.usuario;
 
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
-import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
 /**
@@ -29,8 +24,6 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         DefaultListModel<String> modeloPlaylist = new DefaultListModel<>();
         listaPlaylist.setModel(modeloPlaylist);
         
-        limparListaMusicas();
-        limparListaPlaylist();
     }
     
     public void setController(ActionListener controller) {
@@ -102,6 +95,18 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     public int getPlaylistSelecionada() {
         return listaPlaylist.getSelectedIndex() - 1;
     }
+
+    // SET DOS TEXTO DA DIREITA
+    public void setInfoTitulo(String titulo){txtInfoTitulo.setText(titulo);}
+    public void setInfoArtista(String artista){txtInfoTitulo.setText(artista);}
+    public void setInfoGenero(String genero){txtInfoTitulo.setText(genero);}
+    public void setInfoDuracao(int duracao){
+        int minutos = duracao / 60;
+        int segundos = duracao % 60;
+        String duracaoFormatada = String.format("%-2d/%-2d", minutos, segundos);
+        txtInfoTitulo.setText(duracaoFormatada);
+    }
+    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -127,13 +132,13 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         jpnPrincipal = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listaMusicas = new javax.swing.JList<>();
-        txtTituloMusica = new javax.swing.JLabel();
+        txtInfoTitulo = new javax.swing.JLabel();
         txtArtista = new javax.swing.JLabel();
-        txtNomeArtista = new javax.swing.JLabel();
+        txtInfoArtista = new javax.swing.JLabel();
         txtGenero = new javax.swing.JLabel();
-        txtNomeGenero = new javax.swing.JLabel();
+        txtInfoGenero = new javax.swing.JLabel();
         txtDuracao = new javax.swing.JLabel();
-        txtDuracaoMusica = new javax.swing.JLabel();
+        txtInfoDuracao = new javax.swing.JLabel();
         combolistaPlaylist = new javax.swing.JComboBox<>();
         btnAddMusicaPlaylist = new javax.swing.JButton();
         btnRemoverMusicaPlaylist = new javax.swing.JButton();
@@ -276,19 +281,19 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(listaMusicas);
 
-        txtTituloMusica.setText("Titulo da Musica");
+        txtInfoTitulo.setText("Titulo da Musica");
 
         txtArtista.setText("Artista:");
 
-        txtNomeArtista.setText("Nome do Artista");
+        txtInfoArtista.setText("Nome do Artista");
 
         txtGenero.setText("Gênero:");
 
-        txtNomeGenero.setText("Genero da Musica");
+        txtInfoGenero.setText("Genero da Musica");
 
         txtDuracao.setText("Duração:");
 
-        txtDuracaoMusica.setText("00:00");
+        txtInfoDuracao.setText("00:00");
 
         combolistaPlaylist.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -310,16 +315,16 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
                         .addComponent(txtArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomeArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(txtTituloMusica, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtInfoArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(txtInfoTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipalLayout.createSequentialGroup()
                         .addComponent(txtGenero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNomeGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtInfoGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnPrincipalLayout.createSequentialGroup()
                         .addComponent(txtDuracao, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDuracaoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtInfoDuracao, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnRemoverMusicaPlaylist, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -330,19 +335,19 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
                 .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2)
                     .addGroup(jpnPrincipalLayout.createSequentialGroup()
-                        .addComponent(txtTituloMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtInfoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtNomeArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtInfoArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtNomeGenero, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                            .addComponent(txtInfoGenero, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                             .addComponent(txtGenero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jpnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtDuracao, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                            .addComponent(txtDuracaoMusica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtInfoDuracao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(combolistaPlaylist, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -473,14 +478,14 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     private javax.swing.JLabel txtArtista;
     private javax.swing.JLabel txtBemVindo;
     private javax.swing.JLabel txtDuracao;
-    private javax.swing.JLabel txtDuracaoMusica;
     private javax.swing.JLabel txtGenero;
-    private javax.swing.JLabel txtNomeArtista;
-    private javax.swing.JLabel txtNomeGenero;
+    private javax.swing.JLabel txtInfoArtista;
+    private javax.swing.JLabel txtInfoDuracao;
+    private javax.swing.JLabel txtInfoGenero;
+    private javax.swing.JLabel txtInfoTitulo;
     private javax.swing.JLabel txtPlaylist;
     private javax.swing.JLabel txtPlaylist1;
     private javax.swing.JLabel txtTempo;
-    private javax.swing.JLabel txtTituloMusica;
     private javax.swing.JTextField txtfieldPesquisa;
     // End of variables declaration//GEN-END:variables
 }
