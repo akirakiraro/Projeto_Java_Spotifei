@@ -29,6 +29,8 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
         btnVoltar.addActionListener(controller);
         btnCadastrar.setActionCommand("Cadastrar");
         btnCadastrar.addActionListener(controller);
+        btnExcluir.setActionCommand("Excluir");
+        btnExcluir.addActionListener(controller);
     }
     
     public void limparLista(){
@@ -45,6 +47,10 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
         // Limpa a lista 
         DefaultListModel<String> lista = (DefaultListModel<String>) listaArtista.getModel();
         lista.addElement(artista);
+    }
+    
+    public String getArtistaSelecionada() {
+        return listaArtista.getSelectedValue();
     }
     
     /**
@@ -64,6 +70,8 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
         campoNome = new javax.swing.JTextField();
         btnCadastrar = new javax.swing.JButton();
         btnVoltar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnExcluir = new javax.swing.JButton();
 
         txtTitulo.setText("Cadastrar Artista");
 
@@ -88,6 +96,10 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
 
         btnVoltar.setText("Voltar");
 
+        jLabel1.setText("Excluir Artista Selecionado");
+
+        btnExcluir.setText("Excluir");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,15 +109,16 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE))
-                                .addComponent(txtCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 324, Short.MAX_VALUE))
+                            .addComponent(txtCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -126,6 +139,10 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
                             .addComponent(campoNome, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
@@ -139,8 +156,10 @@ public class TelaCadastroArtista extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JTextField campoNome;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> listaArtista;
     private javax.swing.JLabel txtCadastro;

@@ -7,6 +7,8 @@ package controller.adm;
 import dao.ArtistaDAO;
 import java.awt.event.*;
 import java.util.List;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
 import view.Adm.TelaCadastroArtista;
 import view.Tela;
 import model.Artista;
@@ -26,7 +28,19 @@ public class ArtistaController implements ActionListener{
         // conecta eventos
         this.telaCadastroArtista.setController(this);
         
-        listarArtistas();
+        // Roda caso a tela seja chamada
+        this.telaCadastroArtista.addAncestorListener(new AncestorListener() {
+            @Override
+            public void ancestorAdded(AncestorEvent evt) {
+                System.out.println("\nTela de Cadastro de Artista.");
+                listarArtistas();
+            }
+
+            @Override
+            public void ancestorMoved(AncestorEvent evt) {} // roda quando a tela eh movida
+            @Override
+            public void ancestorRemoved(AncestorEvent evt) {} // roda quando a tela eh removida
+        });
         
     }
 
@@ -39,7 +53,12 @@ public class ArtistaController implements ActionListener{
                 Artista artista = new Artista(telaCadastroArtista.getCampoNome());
                 if (ArtistaDAO.adicionar(artista) == true) {
                     telaCadastroArtista.addListaArtista(artista.getNome());
+                    listarArtistas();
                 }
+                break;
+            case "Excluir":
+                ArtistaDAO.excluirArtista(telaCadastroArtista.getArtistaSelecionada());
+                listarArtistas();
                 break;
             case "Voltar":
                 telaPrincipal.mostrarTela("adm Inicio");
@@ -48,6 +67,7 @@ public class ArtistaController implements ActionListener{
     }
     
     public void listarArtistas(){
+        telaCadastroArtista.limparLista();
         List<String> listaArtistas = ArtistaDAO.getArtistas();
         
         for (String nomeArtista : listaArtistas){

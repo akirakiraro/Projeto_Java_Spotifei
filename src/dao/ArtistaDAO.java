@@ -46,6 +46,30 @@ public class ArtistaDAO {
         return true;
     }
     
+    public static boolean excluirArtista(String artista){
+        String sql = "DELETE FROM artista WHERE nome = ?";
+        
+        try (Connection conn = Conexao.conectar();
+             PreparedStatement stmt = conn.prepareStatement(sql)){
+            
+            stmt.setString(1, artista);
+            
+            int feito = stmt.executeUpdate();
+            
+            if (feito > 0) {
+                System.out.println("Artista deletada com sucesso!");
+                return true;
+            } else {
+                System.out.println("Nenhuma linha afetada. Verifique os dados.");
+                return false;
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Erro ao excluir musica: " + e.getMessage());
+            return false;
+        }
+    }
+    
     // pega a tabela de artistas e pega todos os nomes e coloca dentro da lista
     public static List<String> getArtistas(){
         List<String> artistas = new ArrayList<>();
