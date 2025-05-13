@@ -31,19 +31,20 @@ Concluido:
     [X] Excluir musicas {#2.1_Cadastro_Musica}
         - Excluir musica no banco de dados
         - Atualizar as tabelas
-    [ ] Ajustes ADM {#2.2_Ajuste_Inicial}
+    [X] Ajustes ADM {#2.2_Ajuste_Inicial}
     Fim da parte basica.
     *Partes de Usuarios*
-    [ ] Buscar musicas pelo nome, artista ou genero {#3_Buscador}
-    [ ] Listar informações das musicas buscada {#3.1_Informacoes}
-    [ ] Curtir e descurtir musicas {#3.2_Status}
-    [ ] Gerenciar Playlist {#3.3_Gerenciador_Playlists}
+    [ ] Arrumar listas da tela de usuario {#3_Arrumar_Listas_Usuario}
+    [ ] Buscar musicas pelo nome, artista ou genero {#3.1_Buscador}
+    [ ] Listar informações das musicas buscada {#3.2_Informacoes}
+    [ ] Curtir e descurtir musicas {#3.3_Status}
+    [ ] Gerenciar Playlist {#3.4_Gerenciador_Playlists}
         - Criar um Playlist
         - excluir uma playlist
         - Adicionar musicas na playlist
         - Remover musicas da playlist
         - Editar nome da playlist
-    [ ] Visualizar historico {#3.4_Visualizar_Historico}
+    [ ] Visualizar historico {#3.5_Visualizar_Historico}
         - Forma armazenar um historico de pesquisa
         - ultimas 10 musicas buscadas
         - lista de musicas curtidas
