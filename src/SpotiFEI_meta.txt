@@ -35,7 +35,7 @@ Concluido:
     Fim da parte basica.
     *Partes de Usuarios*
     [X] Arrumar listas da tela de usuario {#3_Arrumar_Listas_Usuario}
-    [ ] Buscar musicas pelo nome, artista ou genero {#3.1_Buscador}
+    [X] Buscar musicas pelo nome, artista ou genero {#3.1_Buscador}
     [ ] Listar informações das musicas buscada {#3.2_Informacoes}
     [ ] Curtir e descurtir musicas {#3.3_Status}
     [ ] Gerenciar Playlist {#3.4_Gerenciador_Playlists}

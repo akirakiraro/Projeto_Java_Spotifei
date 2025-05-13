@@ -45,12 +45,15 @@ public class UsuarioController implements ActionListener {
         });
         
         telaUsuarioInicial.listenerBusca(new DocumentListener() {
+            @Override
             public void insertUpdate(DocumentEvent e) {
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
             }
+            @Override
             public void removeUpdate(DocumentEvent e) {
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
             }
+            @Override
             public void changedUpdate(DocumentEvent e) {
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
             }
