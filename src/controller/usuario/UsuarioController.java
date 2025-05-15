@@ -44,6 +44,7 @@ public class UsuarioController implements ActionListener {
             public void ancestorRemoved(AncestorEvent evt) {} // roda quando a tela eh removida
         });
         
+        // Fica vendo a busca de musica conforme for digitando
         telaUsuarioInicial.listenerBusca(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {

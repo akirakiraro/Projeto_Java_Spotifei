@@ -3,6 +3,7 @@ package view.usuario;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.event.DocumentListener;
+import model.Musica;
 
 /**
  *
@@ -97,16 +98,21 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     }
 
     // SET DOS TEXTO DA DIREITA
-    public void setInfoTitulo(String titulo){txtInfoTitulo.setText(titulo);}
-    public void setInfoArtista(String artista){txtInfoTitulo.setText(artista);}
-    public void setInfoGenero(String genero){txtInfoTitulo.setText(genero);}
-    public void setInfoDuracao(int duracao){
+    private void setInfoTitulo(String titulo){txtInfoTitulo.setText(titulo);}
+    private void setInfoArtista(String artista){txtInfoTitulo.setText(artista);}
+    private void setInfoGenero(String genero){txtInfoTitulo.setText(genero);}
+    private void setInfoDuracao(int duracao){
         int minutos = duracao / 60;
         int segundos = duracao % 60;
         String duracaoFormatada = String.format("%-2d/%-2d", minutos, segundos);
         txtInfoTitulo.setText(duracaoFormatada);
     }
-    
+    public void setInfoMusica(Musica musica) {
+        setInfoTitulo(musica.getTitulo());
+        setInfoArtista(musica.getArtista());
+        setInfoGenero(musica.getGenero());
+        setInfoDuracao(musica.getDuracao());
+    }
     
     /**
      * This method is called from within the constructor to initialize the form.
