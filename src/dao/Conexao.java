@@ -19,17 +19,27 @@ public class Conexao {
         // (Akira) Deixei o meu como: "4352"
         // (FEI) Deixei o meu como: "fei"
         
-        String url = "jdbc:postgresql://localhost:4352/SpotiFEI";
-        String usuario = "postgres";
-        String senha = "4352";
+        String urlAkiraPC = "jdbc:postgresql://localhost:4352/SpotiFEI";
+        String urlAkiraNote = "jdbc:postgresql://localhost:5432/SpotiFEI";
+        String usuarioAkiraPC = "postgres";
+        String usuarioAkiraNote = "postgres";
+        String senhaAkiraPC = "4352";
+        String senhaAkiraNote = "4352";
 
         try {
-            SQL = DriverManager.getConnection(url, usuario, senha);
-            System.out.println("Conectado com sucesso ao PostgreSQL!");
+            SQL = DriverManager.getConnection(urlAkiraPC, usuarioAkiraPC, senhaAkiraPC);
+            System.out.println("\nConectado com sucesso ao PostgreSQL!");
         } catch (SQLException e) {
             System.out.println("Erro na conexao: " + e.getMessage());
+            
+            try {
+                SQL = DriverManager.getConnection(urlAkiraNote, usuarioAkiraNote, senhaAkiraNote);
+            } catch (SQLException e2) {
+                System.out.println("Erro na conexao: " + e2.getMessage());
+            }
+            
         }
-
+        
         return SQL;
     }
     
