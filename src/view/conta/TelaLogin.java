@@ -73,7 +73,6 @@ public class TelaLogin extends javax.swing.JPanel {
 
         loginUsuario.setBackground(new java.awt.Color(29, 185, 84));
         loginUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        loginUsuario.setText("Admin");
         loginUsuario.setBorder(null);
 
         loginSenha.setBackground(new java.awt.Color(29, 185, 84));
