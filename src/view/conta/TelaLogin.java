@@ -56,17 +56,17 @@ public class TelaLogin extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 0, 0));
 
-        txtTitulo.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        txtTitulo.setFont(new java.awt.Font("Roboto", 2, 36)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
         txtTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtTitulo.setText("LOGIN");
 
-        txtUsuario.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtUsuario.setText("Usuário: ");
 
-        txtSenha.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtSenha.setText("Senha: ");
@@ -80,13 +80,13 @@ public class TelaLogin extends javax.swing.JPanel {
         loginSenha.setBorder(null);
 
         btnVoltar.setBackground(new java.awt.Color(29, 185, 84));
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("Voltar");
         btnVoltar.setBorder(null);
 
         btnCadastro.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastro.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnCadastro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastro.setText("Cadastro");
         btnCadastro.setBorder(null);
@@ -97,7 +97,7 @@ public class TelaLogin extends javax.swing.JPanel {
         });
 
         btnLogar.setBackground(new java.awt.Color(29, 185, 84));
-        btnLogar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnLogar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnLogar.setForeground(new java.awt.Color(255, 255, 255));
         btnLogar.setText("Logar");
         btnLogar.setBorder(null);
@@ -120,13 +120,13 @@ public class TelaLogin extends javax.swing.JPanel {
                     .addComponent(txtTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(50, 50, 50)
                                 .addComponent(loginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(38, 38, 38)
                                 .addComponent(loginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(427, 427, 427))))

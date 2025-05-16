@@ -61,17 +61,17 @@ public class TelaCadastro extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 0, 0));
 
-        txtTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        txtTitulo.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
         txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
         txtTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtTitulo.setText("CADASTRO");
+        txtTitulo.setText("  CADASTRO");
 
-        txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtUsuario.setText("Usuario: ");
 
-        txtSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtSenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtSenha.setText("Senha: ");
@@ -88,19 +88,19 @@ public class TelaCadastro extends javax.swing.JPanel {
         loginSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         btnVoltar.setBackground(new java.awt.Color(29, 185, 84));
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("Voltar");
         btnVoltar.setBorder(null);
 
         btnLogin.setBackground(new java.awt.Color(29, 185, 84));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
         btnLogin.setBorder(null);
 
         btnCadastrar.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("Cadastrar");
         btnCadastrar.setBorder(null);
@@ -110,7 +110,7 @@ public class TelaCadastro extends javax.swing.JPanel {
             }
         });
 
-        txtEmailTelefone.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        txtEmailTelefone.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtEmailTelefone.setForeground(new java.awt.Color(255, 255, 255));
         txtEmailTelefone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtEmailTelefone.setText("E-mail ou Telefone: ");
