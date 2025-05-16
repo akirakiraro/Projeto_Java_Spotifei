@@ -80,13 +80,13 @@ public class TelaLogin extends javax.swing.JPanel {
         loginSenha.setBorder(null);
 
         btnVoltar.setBackground(new java.awt.Color(29, 185, 84));
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnVoltar.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("Voltar");
         btnVoltar.setBorder(null);
 
         btnCadastro.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnCadastro.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         btnCadastro.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastro.setText("Cadastro");
         btnCadastro.setBorder(null);
@@ -97,7 +97,7 @@ public class TelaLogin extends javax.swing.JPanel {
         });
 
         btnLogar.setBackground(new java.awt.Color(29, 185, 84));
-        btnLogar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnLogar.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         btnLogar.setForeground(new java.awt.Color(255, 255, 255));
         btnLogar.setText("Logar");
         btnLogar.setBorder(null);
@@ -149,7 +149,7 @@ public class TelaLogin extends javax.swing.JPanel {
                     .addComponent(btnLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

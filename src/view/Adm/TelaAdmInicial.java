@@ -54,7 +54,7 @@ public class TelaAdmInicial extends javax.swing.JPanel {
         txtTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         btnCadastroExcluirMusicas.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastroExcluirMusicas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCadastroExcluirMusicas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnCadastroExcluirMusicas.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastroExcluirMusicas.setText("Cadastrar e Excluir Músicas");
         btnCadastroExcluirMusicas.setBorder(null);
@@ -65,19 +65,19 @@ public class TelaAdmInicial extends javax.swing.JPanel {
         });
 
         btnCadastroArtista.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastroArtista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCadastroArtista.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnCadastroArtista.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastroArtista.setText("Cadastrar Artista");
         btnCadastroArtista.setBorder(null);
 
         btnConsultaUsuarios.setBackground(new java.awt.Color(29, 185, 84));
-        btnConsultaUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnConsultaUsuarios.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnConsultaUsuarios.setForeground(new java.awt.Color(255, 255, 255));
         btnConsultaUsuarios.setText("Consultar Usúarios");
         btnConsultaUsuarios.setBorder(null);
 
         btnEstatisticas.setBackground(new java.awt.Color(29, 185, 84));
-        btnEstatisticas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEstatisticas.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         btnEstatisticas.setForeground(new java.awt.Color(255, 255, 255));
         btnEstatisticas.setText("Ver Estatísticas");
         btnEstatisticas.setBorder(null);
