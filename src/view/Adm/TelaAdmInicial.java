@@ -45,15 +45,42 @@ public class TelaAdmInicial extends javax.swing.JPanel {
         btnConsultaUsuarios = new javax.swing.JButton();
         btnEstatisticas = new javax.swing.JButton();
 
-        txtTitulo.setText("Adm");
+        setBackground(new java.awt.Color(0, 0, 0));
 
-        btnCadastroExcluirMusicas.setText("Cadastrar e Excluir Musicas");
+        txtTitulo.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
+        txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitulo.setText("                                      Administrador ");
+        txtTitulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        txtTitulo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        btnCadastroExcluirMusicas.setBackground(new java.awt.Color(29, 185, 84));
+        btnCadastroExcluirMusicas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCadastroExcluirMusicas.setForeground(new java.awt.Color(255, 255, 255));
+        btnCadastroExcluirMusicas.setText("Cadastrar e Excluir Músicas");
+        btnCadastroExcluirMusicas.setBorder(null);
+        btnCadastroExcluirMusicas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastroExcluirMusicasActionPerformed(evt);
+            }
+        });
+
+        btnCadastroArtista.setBackground(new java.awt.Color(29, 185, 84));
+        btnCadastroArtista.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCadastroArtista.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastroArtista.setText("Cadastrar Artista");
+        btnCadastroArtista.setBorder(null);
 
-        btnConsultaUsuarios.setText("Consultar Usuarios");
+        btnConsultaUsuarios.setBackground(new java.awt.Color(29, 185, 84));
+        btnConsultaUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnConsultaUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        btnConsultaUsuarios.setText("Consultar Usúarios");
+        btnConsultaUsuarios.setBorder(null);
 
-        btnEstatisticas.setText("Ver Estatisticas");
+        btnEstatisticas.setBackground(new java.awt.Color(29, 185, 84));
+        btnEstatisticas.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnEstatisticas.setForeground(new java.awt.Color(255, 255, 255));
+        btnEstatisticas.setText("Ver Estatísticas");
+        btnEstatisticas.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -61,34 +88,41 @@ public class TelaAdmInicial extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnConsultaUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCadastroExcluirMusicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCadastroExcluirMusicas, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-                            .addComponent(btnConsultaUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnEstatisticas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCadastroArtista, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE))))
-                .addContainerGap())
+                            .addComponent(btnCadastroArtista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEstatisticas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(163, 163, 163))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(50, 50, 50)
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCadastroArtista, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
-                    .addComponent(btnCadastroExcluirMusicas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnEstatisticas, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastroArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCadastroExcluirMusicas, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEstatisticas, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
                     .addComponent(btnConsultaUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGap(88, 88, 88))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnCadastroExcluirMusicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastroExcluirMusicasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCadastroExcluirMusicasActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

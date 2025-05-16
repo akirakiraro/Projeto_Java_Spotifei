@@ -48,7 +48,7 @@ public class TelaHome extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("                                           SPOTIFEI");
 
@@ -74,7 +74,7 @@ public class TelaHome extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         btnLogin.setBackground(new java.awt.Color(29, 185, 84));
-        btnLogin.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btnLogin.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("LOGIN");
         btnLogin.setBorder(null);
@@ -106,7 +106,7 @@ public class TelaHome extends javax.swing.JPanel {
         jPanel3.setBackground(new java.awt.Color(0, 0, 0));
 
         btnCadastrar.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastrar.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btnCadastrar.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("CADASTRAR");
         btnCadastrar.setBorder(null);
@@ -135,7 +135,7 @@ public class TelaHome extends javax.swing.JPanel {
         jPanel4.setBackground(new java.awt.Color(0, 0, 0));
 
         btnSair.setBackground(new java.awt.Color(29, 185, 84));
-        btnSair.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        btnSair.setFont(new java.awt.Font("Roboto", 1, 24)); // NOI18N
         btnSair.setForeground(new java.awt.Color(255, 255, 255));
         btnSair.setText("SAIR");
         btnSair.setBorder(null);
