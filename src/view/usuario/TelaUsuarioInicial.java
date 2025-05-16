@@ -3,7 +3,9 @@ package view.usuario;
 import java.awt.event.ActionListener;
 import javax.swing.DefaultListModel;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.ListSelectionListener;
 import model.Musica;
+import model.MusicaSelecionada;
 
 /**
  *
@@ -60,12 +62,13 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     }
     
     // LISTENER DO CAMPO DE BUSCA DE MUSICA
-    public void listenerBusca (DocumentListener listener){
-        txtfieldPesquisa.getDocument().addDocumentListener(listener);
-    }
     public String getCampoBuscador(){
         return txtfieldPesquisa.getText();
     }
+    public void listenerBusca (DocumentListener listener){
+        txtfieldPesquisa.getDocument().addDocumentListener(listener);
+    }
+    
     
     // LISTA DE MUSICA
     public void limparListaMusicas(){
@@ -78,8 +81,14 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
         DefaultListModel<String> lista = (DefaultListModel<String>) listaMusicas.getModel();
         lista.addElement(musica);
     }
-    public int getMusicaSelecionada() {
+    public int getIndexMusicaSelecionada() {
         return listaMusicas.getSelectedIndex() - 1;
+    }
+    public String getStringMusicaSelecionada() {
+        return listaMusicas.getSelectedValue();
+    }
+    public void listenerSeleciona (ListSelectionListener  listener){
+        listaMusicas.addListSelectionListener(listener);
     }
     
     // LISTA DE PLAYLIST
@@ -99,19 +108,14 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
 
     // SET DOS TEXTO DA DIREITA
     private void setInfoTitulo(String titulo){txtInfoTitulo.setText(titulo);}
-    private void setInfoArtista(String artista){txtInfoTitulo.setText(artista);}
-    private void setInfoGenero(String genero){txtInfoTitulo.setText(genero);}
-    private void setInfoDuracao(int duracao){
-        int minutos = duracao / 60;
-        int segundos = duracao % 60;
-        String duracaoFormatada = String.format("%-2d/%-2d", minutos, segundos);
-        txtInfoTitulo.setText(duracaoFormatada);
-    }
-    public void setInfoMusica(Musica musica) {
-        setInfoTitulo(musica.getTitulo());
-        setInfoArtista(musica.getArtista());
-        setInfoGenero(musica.getGenero());
-        setInfoDuracao(musica.getDuracao());
+    private void setInfoArtista(String artista){txtInfoArtista.setText(artista);}
+    private void setInfoGenero(String genero){txtInfoGenero.setText(genero);}
+    private void setInfoDuracao(String duracao){txtInfoDuracao.setText(duracao);}
+    public void setInfoMusica(MusicaSelecionada music) {
+        setInfoTitulo(music.getTitulo());
+        setInfoArtista(music.getArtista());
+        setInfoGenero(music.getGenero());
+        setInfoDuracao(music.getDuracao());
     }
     
     /**

@@ -59,95 +59,51 @@ public class TelaCadastro extends javax.swing.JPanel {
         txtEmailTelefone = new javax.swing.JLabel();
         loginEmailTelefone = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(0, 0, 0));
-
-        txtTitulo.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
-        txtTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        txtTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         txtTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        txtTitulo.setText("  CADASTRO");
+        txtTitulo.setText("CADASTRO");
 
-        txtUsuario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtUsuario.setText("Usuario: ");
 
-        txtSenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtSenha.setForeground(new java.awt.Color(255, 255, 255));
         txtSenha.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtSenha.setText("Senha: ");
 
-        loginUsuario.setBackground(new java.awt.Color(29, 185, 84));
-        loginUsuario.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        loginUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginUsuarioActionPerformed(evt);
-            }
-        });
-
-        loginSenha.setBackground(new java.awt.Color(29, 185, 84));
-        loginSenha.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        btnVoltar.setBackground(new java.awt.Color(29, 185, 84));
-        btnVoltar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnVoltar.setForeground(new java.awt.Color(255, 255, 255));
         btnVoltar.setText("Voltar");
-        btnVoltar.setBorder(null);
 
-        btnLogin.setBackground(new java.awt.Color(29, 185, 84));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
-        btnLogin.setBorder(null);
 
-        btnCadastrar.setBackground(new java.awt.Color(29, 185, 84));
-        btnCadastrar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCadastrar.setText("Cadastrar");
-        btnCadastrar.setBorder(null);
-        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCadastrarActionPerformed(evt);
-            }
-        });
 
-        txtEmailTelefone.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtEmailTelefone.setForeground(new java.awt.Color(255, 255, 255));
         txtEmailTelefone.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         txtEmailTelefone.setText("E-mail ou Telefone: ");
-
-        loginEmailTelefone.setBackground(new java.awt.Color(29, 185, 84));
-        loginEmailTelefone.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(231, 231, 231)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtEmailTelefone)
-                                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(loginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(loginEmailTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(loginUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(116, Short.MAX_VALUE)
-                        .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(75, 75, 75)))
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loginUsuario))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtEmailTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loginEmailTelefone))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loginSenha)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -156,10 +112,10 @@ public class TelaCadastro extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loginUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(loginUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtEmailTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                     .addComponent(loginEmailTelefone, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE))
@@ -167,22 +123,14 @@ public class TelaCadastro extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(loginSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(80, 80, 80))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
+                    .addComponent(btnVoltar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCadastrarActionPerformed
-
-    private void loginUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_loginUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

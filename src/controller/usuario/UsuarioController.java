@@ -9,7 +9,10 @@ import javax.swing.event.AncestorEvent;
 import javax.swing.event.AncestorListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import model.Musica;
+import model.MusicaSelecionada;
 import view.*;
 
 /**
@@ -57,6 +60,19 @@ public class UsuarioController implements ActionListener {
             @Override
             public void changedUpdate(DocumentEvent e) {
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
+            }
+        });
+        
+        // Fica de olho na lista para selecionar
+        telaUsuarioInicial.listenerSeleciona(new ListSelectionListener(){
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()) {
+                    MusicaSelecionada MusicaSelecionada;
+                    ;
+                    
+                    telaUsuarioInicial.setInfoMusica(getInfoMusicaSelecionada(telaUsuarioInicial.getStringMusicaSelecionada()));
+                }
             }
         });
     }
@@ -123,4 +139,24 @@ public class UsuarioController implements ActionListener {
         }
     }
     
+    public MusicaSelecionada getInfoMusicaSelecionada(String stringMusicaSelecionada){
+        // Divide a string em partes com base no separador "|"
+        String[] partes = stringMusicaSelecionada.split("\\|");
+
+        // Remove espaços em excesso de cada parte
+        String titulo = partes[0].trim();
+        String duracao = partes[1].trim();
+        String artista = partes[2].trim();
+        String genero = partes[3].trim();
+        
+        MusicaSelecionada musicaSelecionada = new MusicaSelecionada(titulo, duracao, artista, genero);
+        
+        System.out.println("\nMusica no getInfoMusicaSelecionada");
+        System.out.println("Titulo: " + titulo);
+        System.out.println("Duracao: " + duracao);
+        System.out.println("Artista: " + artista);
+        System.out.println("Genero: " + genero);
+        
+        return musicaSelecionada;
+    }
 }
