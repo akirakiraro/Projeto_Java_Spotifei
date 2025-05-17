@@ -51,14 +51,17 @@ public class UsuarioController implements ActionListener {
         telaUsuarioInicial.listenerBusca(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
+                telaUsuarioInicial.limpaSelecionado();
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
             }
             @Override
             public void removeUpdate(DocumentEvent e) {
+                telaUsuarioInicial.limpaSelecionado();
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
             }
             @Override
             public void changedUpdate(DocumentEvent e) {
+                telaUsuarioInicial.limpaSelecionado();
                 listarMusicasBuscada(telaUsuarioInicial.getCampoBuscador());
             }
         });
@@ -68,8 +71,6 @@ public class UsuarioController implements ActionListener {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 if (!e.getValueIsAdjusting()) {
-                    MusicaSelecionada MusicaSelecionada;
-                    ;
                     
                     telaUsuarioInicial.setInfoMusica(getInfoMusicaSelecionada(telaUsuarioInicial.getStringMusicaSelecionada()));
                 }
@@ -88,6 +89,7 @@ public class UsuarioController implements ActionListener {
                 break;
             // botoes parte lateral
             case "Inicio":
+                telaUsuarioInicial.limpaSelecionado();
                 break;
             case "Playlist":
                 telaPrincipal.mostrarTela("playlist");
@@ -140,9 +142,13 @@ public class UsuarioController implements ActionListener {
     }
     
     public MusicaSelecionada getInfoMusicaSelecionada(String stringMusicaSelecionada){
+        if (stringMusicaSelecionada == null) {
+            MusicaSelecionada nenhumaMusicaSelecionada = new MusicaSelecionada("","","","");
+            return nenhumaMusicaSelecionada;
+        }
         // Divide a string em partes com base no separador "|"
         String[] partes = stringMusicaSelecionada.split("\\|");
-
+        
         // Remove espaços em excesso de cada parte
         String titulo = partes[0].trim();
         String duracao = partes[1].trim();

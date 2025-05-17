@@ -19,9 +19,9 @@ public class Conexao {
         // (Akira) Deixei o meu como: "4352"
         // (FEI) Deixei o meu como: "fei"
         
-        String url = "jdbc:postgresql://localhost:5433/SpotiFEI";
+        String url = "jdbc:postgresql://localhost:4352/SpotiFEI";
         String usuario = "postgres";
-        String senha = "fei";
+        String senha = "4352";
 
         try {
             SQL = DriverManager.getConnection(url, usuario, senha);

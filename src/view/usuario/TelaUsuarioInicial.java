@@ -87,8 +87,11 @@ public class TelaUsuarioInicial extends javax.swing.JPanel {
     public String getStringMusicaSelecionada() {
         return listaMusicas.getSelectedValue();
     }
-    public void listenerSeleciona (ListSelectionListener  listener){
+    public void listenerSeleciona(ListSelectionListener  listener){
         listaMusicas.addListSelectionListener(listener);
+    }
+    public void limpaSelecionado() {
+        listaMusicas.clearSelection();
     }
     
     // LISTA DE PLAYLIST
